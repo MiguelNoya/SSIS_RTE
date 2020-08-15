@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSIS_RTE", "SSIS_RTE.dtproj", "{91CAACF5-FE2A-422B-8810-B6D5D046B121}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91CAACF5-FE2A-422B-8810-B6D5D046B121}.Development|Default.ActiveCfg = Development
+		{91CAACF5-FE2A-422B-8810-B6D5D046B121}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A0F93BB-CB93-4FB2-B77E-A0E514EC6DF6}
+	EndGlobalSection
+EndGlobal

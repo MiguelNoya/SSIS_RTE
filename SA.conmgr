@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="SA"
+  DTS:DTSID="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="InitialCatalog">@[$Project::STAGING_DB_NAME]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::SA_SERVER_NAME]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=172.18.100.28;User ID=ines.costa;Initial Catalog=RTE_BI_SA;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="sJsoJfhnSA=="
+        p4:IV="BDUg/mQqLWw=" xmlns:p4="www.microsoft.com/SqlServer/SSIS">2YB38HB0ENAHBb7W2cSoVjpyfWjQC8slt7n/aT6gekdGbF7QTqzAKLdezUInmE4q2RfH47E4YW15wN2yURMdQE07Yc4M4PBG+kyNRjZsQPy/mlx5S3VDze/xaO1DG575gbxHdvZNW4Xyl8t6Y+X9SGjg7m8/4Ld+/BbNpK5VP+8=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

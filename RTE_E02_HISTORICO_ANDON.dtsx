@@ -1,0 +1,1601 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/15/2018 1:42:52 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SRVBI"
+  DTS:CreatorName="JAPMARCO\B2F"
+  DTS:DTSID="{A0EABF74-A360-49E3-B28E-F10EBBB7064F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.68"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="RTE_E02_HISTORICO_ANDON"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{01F49308-7798-4ABA-A6C4-346A63C896BD}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="20"
+      DTS:DTSID="{E3D74F51-523C-45F5-ACF3-5F3E6A123154}"
+      DTS:ObjectName="ETL_EXECUTION_NUMBER">
+      <DTS:Property
+        DTS:DataType="20"
+        DTS:Name="ParameterValue">-1</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1ED0796B-50EB-4608-B447-51BCC72D02A5}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TASK_START_TIME">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Hist Andom"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="VIEW_TO_SA"
+      DTS:DTSID="{99A2C519-C66C-4645-8EB3-7456CB9C4116}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Hist Andom"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Hist Andom\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[SA_EXT_HISTORICO_ANDON]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Hist Andom\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[dataturno]"
+                      cachedDataType="dbDate"
+                      cachedName="dataturno"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dataturno]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataturno]" />
+                    <inputColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[turno]"
+                      cachedDataType="i4"
+                      cachedName="turno"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[turno]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[turno]" />
+                    <inputColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[linha]"
+                      cachedDataType="numeric"
+                      cachedName="linha"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[linha]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[linha]" />
+                    <inputColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[objectivo]"
+                      cachedDataType="numeric"
+                      cachedName="objectivo"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[objectivo]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[objectivo]" />
+                    <inputColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[qtdprod]"
+                      cachedDataType="numeric"
+                      cachedName="qtdprod"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[qtdprod]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[qtdprod]" />
+                    <inputColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avanco]"
+                      cachedDataType="numeric"
+                      cachedName="avanco"
+                      cachedPrecision="11"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avanco]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[avanco]" />
+                    <inputColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[proxmud]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="proxmud"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[proxmud]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[proxmud]" />
+                    <inputColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[faltam]"
+                      cachedDataType="numeric"
+                      cachedName="faltam"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[faltam]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[faltam]" />
+                    <inputColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[estado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="estado"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[estado]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[estado]" />
+                    <inputColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[arranjo]"
+                      cachedDataType="numeric"
+                      cachedName="arranjo"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[arranjo]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[arranjo]" />
+                    <inputColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[checked]"
+                      cachedDataType="bool"
+                      cachedName="checked"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[checked]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[checked]" />
+                    <inputColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[data_update]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="data_update"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[data_update]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[data_update]" />
+                    <inputColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[objectivo_inicial]"
+                      cachedDataType="numeric"
+                      cachedName="objectivo_inicial"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[objectivo_inicial]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[objectivo_inicial]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dataturno]"
+                      dataType="dbDate"
+                      name="dataturno" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[turno]"
+                      dataType="i4"
+                      name="turno" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[linha]"
+                      dataType="numeric"
+                      name="linha"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[objectivo]"
+                      dataType="numeric"
+                      name="objectivo"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[qtdprod]"
+                      dataType="numeric"
+                      name="qtdprod"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avanco]"
+                      dataType="numeric"
+                      name="avanco"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[proxmud]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="proxmud" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[faltam]"
+                      dataType="numeric"
+                      name="faltam"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="estado" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[arranjo]"
+                      dataType="numeric"
+                      name="arranjo"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[checked]"
+                      dataType="bool"
+                      name="checked" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[data_update]"
+                      dataType="dbTimeStamp"
+                      name="data_update" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[objectivo_inicial]"
+                      dataType="numeric"
+                      name="objectivo_inicial"
+                      precision="10" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Hist Andom\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Hist Andom\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Hist Andom\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Hist Andom\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[v_ext_historico_andon]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Hist Andom\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataturno]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dataturno]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataturno]"
+                      name="dataturno"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[turno]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[turno]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[turno]"
+                      name="turno"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[linha]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[linha]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[linha]"
+                      name="linha"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[objectivo]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[objectivo]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[objectivo]"
+                      name="objectivo"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[qtdprod]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[qtdprod]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[qtdprod]"
+                      name="qtdprod"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[avanco]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avanco]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[avanco]"
+                      name="avanco"
+                      precision="11"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[proxmud]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[proxmud]"
+                      length="50"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[proxmud]"
+                      name="proxmud"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[faltam]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[faltam]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[faltam]"
+                      name="faltam"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[estado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[estado]"
+                      length="30"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[estado]"
+                      name="estado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[arranjo]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[arranjo]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[arranjo]"
+                      name="arranjo"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[checked]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[checked]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[checked]"
+                      name="checked"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[data_update]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[data_update]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[data_update]"
+                      name="data_update"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[objectivo_inicial]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[objectivo_inicial]"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].Columns[objectivo_inicial]"
+                      name="objectivo_inicial"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dataturno]"
+                      dataType="dbDate"
+                      name="dataturno" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[turno]"
+                      dataType="i4"
+                      name="turno" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[linha]"
+                      dataType="numeric"
+                      name="linha"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[objectivo]"
+                      dataType="numeric"
+                      name="objectivo"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[qtdprod]"
+                      dataType="numeric"
+                      name="qtdprod"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avanco]"
+                      dataType="numeric"
+                      name="avanco"
+                      precision="11" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[proxmud]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="proxmud" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[faltam]"
+                      dataType="numeric"
+                      name="faltam"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="estado" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[arranjo]"
+                      dataType="numeric"
+                      name="arranjo"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[checked]"
+                      dataType="bool"
+                      name="checked" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[data_update]"
+                      dataType="dbTimeStamp"
+                      name="data_update" />
+                    <externalMetadataColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[objectivo_inicial]"
+                      dataType="numeric"
+                      name="objectivo_inicial"
+                      precision="10" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dataturno]"
+                      dataType="dbDate"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dataturno]"
+                      name="dataturno" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[turno]"
+                      dataType="i4"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[turno]"
+                      name="turno" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[linha]"
+                      dataType="numeric"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[linha]"
+                      name="linha"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[objectivo]"
+                      dataType="numeric"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[objectivo]"
+                      name="objectivo"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[qtdprod]"
+                      dataType="numeric"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[qtdprod]"
+                      name="qtdprod"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avanco]"
+                      dataType="numeric"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avanco]"
+                      name="avanco"
+                      precision="11" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[proxmud]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[proxmud]"
+                      name="proxmud" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[faltam]"
+                      dataType="numeric"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[faltam]"
+                      name="faltam"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[estado]"
+                      name="estado" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[arranjo]"
+                      dataType="numeric"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[arranjo]"
+                      name="arranjo"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[checked]"
+                      dataType="bool"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[checked]"
+                      name="checked" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[data_update]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[data_update]"
+                      name="data_update" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[objectivo_inicial]"
+                      dataType="numeric"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[objectivo_inicial]"
+                      name="objectivo_inicial"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Hist Andom.Paths[OLE DB Source Output]"
+              endId="Package\Hist Andom\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Hist Andom\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Prod Eturnos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="VIEW_TO_SA"
+      DTS:DTSID="{1513c850-383d-48b3-9d7b-27678cdc20da}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Prod Eturnos"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Prod Eturnos\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SA_EXT_HISTORICO_ETTURNOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Prod Eturnos\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Dataturno]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="Dataturno"
+                      externalMetadataColumnId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dataturno]"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dataturno]" />
+                    <inputColumn
+                      refId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Turno]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Turno"
+                      externalMetadataColumnId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Turno]"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[Turno]" />
+                    <inputColumn
+                      refId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Linha]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Linha"
+                      externalMetadataColumnId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Linha]"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[Linha]" />
+                    <inputColumn
+                      refId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Ordem]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="Ordem"
+                      externalMetadataColumnId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ordem]"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ordem]" />
+                    <inputColumn
+                      refId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[QuantidadeProd]"
+                      cachedDataType="numeric"
+                      cachedName="QuantidadeProd"
+                      cachedPrecision="18"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QuantidadeProd]"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[QuantidadeProd]" />
+                    <inputColumn
+                      refId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[QuantidadeDesm]"
+                      cachedDataType="numeric"
+                      cachedName="QuantidadeDesm"
+                      cachedPrecision="18"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QuantidadeDesm]"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[QuantidadeDesm]" />
+                    <inputColumn
+                      refId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DataEmitida]"
+                      cachedDataType="wstr"
+                      cachedLength="14"
+                      cachedName="DataEmitida"
+                      externalMetadataColumnId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DataEmitida]"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[DataEmitida]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dataturno]"
+                      dataType="wstr"
+                      length="8"
+                      name="Dataturno" />
+                    <externalMetadataColumn
+                      refId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Turno]"
+                      dataType="wstr"
+                      length="10"
+                      name="Turno" />
+                    <externalMetadataColumn
+                      refId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Linha]"
+                      dataType="wstr"
+                      length="3"
+                      name="Linha" />
+                    <externalMetadataColumn
+                      refId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ordem]"
+                      dataType="wstr"
+                      length="12"
+                      name="Ordem" />
+                    <externalMetadataColumn
+                      refId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QuantidadeProd]"
+                      dataType="numeric"
+                      name="QuantidadeProd"
+                      precision="18"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QuantidadeDesm]"
+                      dataType="numeric"
+                      name="QuantidadeDesm"
+                      precision="18"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DataEmitida]"
+                      dataType="wstr"
+                      length="14"
+                      name="DataEmitida" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Prod Eturnos\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Prod Eturnos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Prod Eturnos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Prod Eturnos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Prod Eturnos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Prod Eturnos\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[v_ext_historico_etturnos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Prod Eturnos\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dataturno]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Dataturno]"
+                      length="8"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dataturno]"
+                      name="Dataturno"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[Turno]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Turno]"
+                      length="10"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[Turno]"
+                      name="Turno"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[Linha]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Linha]"
+                      length="3"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[Linha]"
+                      name="Linha"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ordem]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Ordem]"
+                      length="12"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ordem]"
+                      name="Ordem"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[QuantidadeProd]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[QuantidadeProd]"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[QuantidadeProd]"
+                      name="QuantidadeProd"
+                      precision="18"
+                      scale="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[QuantidadeDesm]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[QuantidadeDesm]"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[QuantidadeDesm]"
+                      name="QuantidadeDesm"
+                      precision="18"
+                      scale="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[DataEmitida]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DataEmitida]"
+                      length="14"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].Columns[DataEmitida]"
+                      name="DataEmitida"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Dataturno]"
+                      dataType="wstr"
+                      length="8"
+                      name="Dataturno" />
+                    <externalMetadataColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Turno]"
+                      dataType="wstr"
+                      length="10"
+                      name="Turno" />
+                    <externalMetadataColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Linha]"
+                      dataType="wstr"
+                      length="3"
+                      name="Linha" />
+                    <externalMetadataColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Ordem]"
+                      dataType="wstr"
+                      length="12"
+                      name="Ordem" />
+                    <externalMetadataColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[QuantidadeProd]"
+                      dataType="numeric"
+                      name="QuantidadeProd"
+                      precision="18"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[QuantidadeDesm]"
+                      dataType="numeric"
+                      name="QuantidadeDesm"
+                      precision="18"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DataEmitida]"
+                      dataType="wstr"
+                      length="14"
+                      name="DataEmitida" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Dataturno]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Dataturno]"
+                      name="Dataturno" />
+                    <outputColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Turno]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Turno]"
+                      name="Turno" />
+                    <outputColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Linha]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Linha]"
+                      name="Linha" />
+                    <outputColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ordem]"
+                      dataType="wstr"
+                      length="12"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ordem]"
+                      name="Ordem" />
+                    <outputColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[QuantidadeProd]"
+                      dataType="numeric"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[QuantidadeProd]"
+                      name="QuantidadeProd"
+                      precision="18"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[QuantidadeDesm]"
+                      dataType="numeric"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[QuantidadeDesm]"
+                      name="QuantidadeDesm"
+                      precision="18"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DataEmitida]"
+                      dataType="wstr"
+                      length="14"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DataEmitida]"
+                      name="DataEmitida" />
+                    <outputColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Prod Eturnos.Paths[OLE DB Source Output]"
+              endId="Package\Prod Eturnos\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Prod Eturnos\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRUNCATE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="TRUNCATE"
+      DTS:DTSID="{3413C752-7C55-4766-9200-0D51E9650DFD}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRUNCATE"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE SA_EXT_HISTORICO_ANDON;&#xA;TRUNCATE TABLE SA_EXT_HISTORICO_ETTURNOS;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{D8168044-0BE4-4552-BDE0-97D5C5BA5A87}"
+      DTS:From="Package\TRUNCATE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Hist Andom" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição]"
+      DTS:CreationName=""
+      DTS:DTSID="{3EDFE4EB-B153-4121-826D-FD2AED4777A5}"
+      DTS:From="Package\TRUNCATE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição"
+      DTS:To="Package\Prod Eturnos" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{791D59FE-F06C-46F8-BE6A-092CDACDEAFC}"
+      DTS:EventID="-986637"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{3D859EDE-6F0A-40AB-B5DD-7BD209B8B84C}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\LOG ERROR"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{595835C8-93C9-40DF-A74C-7FB658DDF2EA}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="LOG ERROR"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{98525CFE-E826-4424-9DC2-8FE809DDBED0}"
+              SQLTask:SqlStatementSource="DECLARE @EXEC_NUM BIGINT&#xA;SET @EXEC_NUM =?&#xA;DECLARE @PACKAGE_NAME VARCHAR(100)&#xA;SET @PACKAGE_NAME =?&#xA;DECLARE @TASK_NAME VARCHAR(100)&#xA;SET @TASK_NAME =?&#xA;DECLARE @ERROR_CODE VARCHAR(1000)&#xA;SET @ERROR_CODE=?&#xA;DECLARE @ERROR_DESC VARCHAR(3000)&#xA;SET @ERROR_DESC=?&#xA;DECLARE @START_TIME datetime&#xA;SET @START_TIME=convert(datetime, ?)&#xA;&#xA;INSERT INTO [dbo].[ETL_LOG]&#xA;       (ETL_EXECUTION_NUMBER, PACKAGE_NAME, TASK_NAME, TASK_TIMESTAMP, TASK_DURATION_SEC, TASK_STATUS, comments)&#xA;       VALUES&#xA;   &#xA;       (@EXEC_NUM&#xA;           ,@PACKAGE_NAME&#xA;           ,@TASK_NAME&#xA;           , getdate()&#xA;           ,DATEDIFF(SS, @START_TIME   ,GETDATE() )&#xA;           ,'ERROR'&#xA;   ,case when len (@ERROR_CODE)&lt;0 then 'ERR CD. = '+@ERROR_CODE+' || ' else '' end+@ERROR_DESC&#xA;           )&#xA;  " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="$Package::ETL_EXECUTION_NUMBER"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::TASK_START_TIME"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPostExecute]"
+      DTS:CreationName="OnPostExecute"
+      DTS:DTSID="{1FA5120F-3F2C-4C11-BC74-2A0B94AD509C}"
+      DTS:EventID="1644194048"
+      DTS:EventName="OnPostExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{9402AF9D-DD28-4797-A902-938A0F51F9CD}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\LOG SUCCESS"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{B698EE63-38D7-43F2-90C0-D4AD32B79735}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="LOG SUCCESS"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{98525CFE-E826-4424-9DC2-8FE809DDBED0}"
+              SQLTask:SqlStatementSource="DECLARE @EXEC_NUM BIGINT&#xA;SET @EXEC_NUM =?&#xA;DECLARE @PACKAGE_NAME VARCHAR(100)&#xA;SET @PACKAGE_NAME =?&#xA;DECLARE @TASK_NAME VARCHAR(100)&#xA;SET @TASK_NAME =?&#xA;DECLARE @START_TIME datetime&#xA;SET @START_TIME=convert(datetime, ?,121)&#xA;&#xA;IF @TASK_NAME &lt;&gt;@PACKAGE_NAME &#xA;&#xA;INSERT INTO [dbo].[ETL_LOG]&#xA;       (ETL_EXECUTION_NUMBER, PACKAGE_NAME, TASK_NAME, TASK_TIMESTAMP, TASK_DURATION_SEC, TASK_STATUS)&#xA;       VALUES&#xA;   &#xA;       (@EXEC_NUM&#xA;           ,@PACKAGE_NAME&#xA;           ,@TASK_NAME&#xA;           , getdate()&#xA;           ,DATEDIFF(SS, @START_TIME   ,GETDATE() )&#xA;           ,'SUCCESS'&#xA;           )&#xA;;  " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="$Package::ETL_EXECUTION_NUMBER"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::TASK_START_TIME"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPreExecute]"
+      DTS:CreationName="OnPreExecute"
+      DTS:DTSID="{6CE67FC5-3056-4BCD-A065-339A2A7D0833}"
+      DTS:EventID="1644194048"
+      DTS:EventName="OnPreExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{EAD4189E-EB22-44EE-B209-D27D083D594A}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPreExecute]\GET ETL START DATE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{118ED981-F510-4C71-AF98-F3EE8E5B43B5}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="GET ETL START DATE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{98525CFE-E826-4424-9DC2-8FE809DDBED0}"
+              SQLTask:SqlStatementSource="SELECT convert(varchar(50), GETDATE(),121) AS STARTTIME"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::TASK_START_TIME" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="sql12">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="130.4,41.6"
+          Id="Package\TRUNCATE"
+          TopLeft="11.1,5.49999999999995" />
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\Hist Andom"
+          TopLeft="9.90000000000001,107.1" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="76.3,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139.2,41.6"
+          Id="Package\Prod Eturnos"
+          TopLeft="169.900002724784,110.81764568606" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="96.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="142.800002724784,63.7176456860605"
+              Start="0,0"
+              End="142.800002724784,56.2176456860605">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.9504593339592" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.9504593339592"
+                    Point2="0,25.9504593339592"
+                    Point3="4,25.9504593339592" />
+                  <mssgle:LineSegment
+                    End="138.800002724784,25.9504593339592" />
+                  <mssgle:CubicBezierSegment
+                    Point1="138.800002724784,25.9504593339592"
+                    Point2="142.800002724784,25.9504593339592"
+                    Point3="142.800002724784,29.9504593339592" />
+                  <mssgle:LineSegment
+                    End="142.800002724784,56.2176456860605" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package.EventHandlers[OnError]\LOG ERROR"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="145.6,41.6"
+          Id="Package.EventHandlers[OnPostExecute]\LOG SUCCESS"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="183.2,41.6"
+          Id="Package.EventHandlers[OnPreExecute]\GET ETL START DATE"
+          TopLeft="47,25" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Hist Andom">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Hist Andom\OLE DB Source"
+          TopLeft="15.9,5.49999999999995" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Hist Andom\OLE DB Destination"
+          TopLeft="5.50000000000001,107.1" />
+        <EdgeLayout
+          Id="Package\Hist Andom.Paths[OLE DB Source Output]"
+          TopLeft="90.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Hist Andom\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Hist Andom\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Prod Eturnos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Prod Eturnos\OLE DB Destination"
+          TopLeft="5.50000000000001,107.1" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Prod Eturnos\OLE DB Source"
+          TopLeft="15.9,5.49999999999995" />
+        <EdgeLayout
+          Id="Package\Prod Eturnos.Paths[OLE DB Source Output]"
+          TopLeft="90.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Prod Eturnos\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Prod Eturnos\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

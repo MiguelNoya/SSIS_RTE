@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="PARAMS"
+  DTS:DTSID="{98525CFE-E826-4424-9DC2-8FE809DDBED0}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=172.18.100.28;User ID=ines.costa;Initial Catalog=RTE_BI_PARAM;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="KoJ/GNJhmA=="
+        p4:IV="pFYEo3VGfMM=" xmlns:p4="www.microsoft.com/SqlServer/SSIS">IgP9+Z5lbuPzEJRXYDIZ6RpJgd8F4p1dGiEksv4XsmOS1UKTsTDOpW0FXJIm9/JhnmnUTS9db6TPUHvhUc+7A3PBG7CD+oGzriK+cBVWG8gdm18YsODo8OKadI3QYqtw89a7pnc2MnZujgOhzJwoT5R5aM6XiZnahswU6a0+W/o=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

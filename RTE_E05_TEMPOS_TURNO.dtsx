@@ -1,0 +1,811 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/15/2018 1:42:52 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SRVBI"
+  DTS:CreatorName="JAPMARCO\B2F"
+  DTS:DTSID="{4E054492-571B-4EBC-9DCC-C1133DFF809D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.68"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="RTE_E05_TEMPOS_TURNO"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="44"
+  DTS:VersionGUID="{9EF9E337-4997-4A1D-BED5-FC977303D06E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="20"
+      DTS:DTSID="{56F3F8A8-9CBA-4067-9389-02AD0FE938F4}"
+      DTS:ObjectName="ETL_EXECUTION_NUMBER">
+      <DTS:Property
+        DTS:DataType="20"
+        DTS:Name="ParameterValue">-1</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{31C1175A-037A-4511-A6C5-7EB1F6841F44}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TASK_START_TIME">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\TRUNCATE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="TRUNCATE"
+      DTS:DTSID="{FBD49C3E-B22A-4004-894B-BF677C0ECC0B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRUNCATE"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[SA_EXT_TEMPO_TURNOS]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\VIEW_TO_SA"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="VIEW_TO_SA"
+      DTS:DTSID="{43837F5A-7056-40D8-96F9-9169DEEB94A9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="VIEW_TO_SA"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\VIEW_TO_SA\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SA_EXT_TEMPO_TURNOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\VIEW_TO_SA\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tipo]"
+                      cachedDataType="i4"
+                      cachedName="tipo"
+                      externalMetadataColumnId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tipo]"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[tipo]" />
+                    <inputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TURNO_COD]"
+                      cachedDataType="i4"
+                      cachedName="TURNO_COD"
+                      externalMetadataColumnId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TURNO_COD]"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[TURNO_COD]" />
+                    <inputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[linha_cod]"
+                      cachedDataType="i4"
+                      cachedName="linha_cod"
+                      externalMetadataColumnId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[linha_cod]"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[linha_cod]" />
+                    <inputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[datahora]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="datahora"
+                      externalMetadataColumnId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[datahora]"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[datahora]" />
+                    <inputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[acum]"
+                      cachedDataType="r8"
+                      cachedName="acum"
+                      externalMetadataColumnId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[acum]"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[acum]" />
+                    <inputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[factorturno]"
+                      cachedDataType="i4"
+                      cachedName="factorturno"
+                      externalMetadataColumnId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[factorturno]"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[factorturno]" />
+                    <inputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IndividualDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="IndividualDate"
+                      externalMetadataColumnId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IndividualDate]"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[IndividualDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tipo]"
+                      dataType="i4"
+                      name="tipo" />
+                    <externalMetadataColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TURNO_COD]"
+                      dataType="i4"
+                      name="TURNO_COD" />
+                    <externalMetadataColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[linha_cod]"
+                      dataType="i4"
+                      name="linha_cod" />
+                    <externalMetadataColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[datahora]"
+                      dataType="dbTimeStamp"
+                      name="datahora" />
+                    <externalMetadataColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[acum]"
+                      dataType="r8"
+                      name="acum" />
+                    <externalMetadataColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[factorturno]"
+                      dataType="i4"
+                      name="factorturno" />
+                    <externalMetadataColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IndividualDate]"
+                      dataType="dbTimeStamp"
+                      name="IndividualDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\VIEW_TO_SA\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\VIEW_TO_SA\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[v_ext_tempos_turno]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\VIEW_TO_SA\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[tipo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tipo]"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[tipo]"
+                      name="tipo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[TURNO_COD]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TURNO_COD]"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[TURNO_COD]"
+                      name="TURNO_COD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[linha_cod]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[linha_cod]"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[linha_cod]"
+                      name="linha_cod"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[datahora]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[datahora]"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[datahora]"
+                      name="datahora"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[acum]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[acum]"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[acum]"
+                      name="acum"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[factorturno]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[factorturno]"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[factorturno]"
+                      name="factorturno"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[IndividualDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IndividualDate]"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].Columns[IndividualDate]"
+                      name="IndividualDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tipo]"
+                      dataType="i4"
+                      name="tipo" />
+                    <externalMetadataColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TURNO_COD]"
+                      dataType="i4"
+                      name="TURNO_COD" />
+                    <externalMetadataColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[linha_cod]"
+                      dataType="i4"
+                      name="linha_cod" />
+                    <externalMetadataColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[datahora]"
+                      dataType="dbTimeStamp"
+                      name="datahora" />
+                    <externalMetadataColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[acum]"
+                      dataType="r8"
+                      name="acum" />
+                    <externalMetadataColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[factorturno]"
+                      dataType="i4"
+                      name="factorturno" />
+                    <externalMetadataColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IndividualDate]"
+                      dataType="dbTimeStamp"
+                      name="IndividualDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TURNO_COD]"
+                      dataType="i4"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TURNO_COD]"
+                      name="TURNO_COD" />
+                    <outputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[linha_cod]"
+                      dataType="i4"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[linha_cod]"
+                      name="linha_cod" />
+                    <outputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IndividualDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IndividualDate]"
+                      name="IndividualDate" />
+                    <outputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[datahora]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[datahora]"
+                      name="datahora" />
+                    <outputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[acum]"
+                      dataType="r8"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[acum]"
+                      name="acum" />
+                    <outputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tipo]"
+                      dataType="i4"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tipo]"
+                      name="tipo" />
+                    <outputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[factorturno]"
+                      dataType="i4"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[factorturno]"
+                      name="factorturno" />
+                    <outputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\VIEW_TO_SA.Paths[OLE DB Source Output]"
+              endId="Package\VIEW_TO_SA\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\VIEW_TO_SA\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{5B7006C4-DB55-407F-B5C4-3DDA39729310}"
+      DTS:From="Package\TRUNCATE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\VIEW_TO_SA" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{6CE72A98-9E1E-4AAE-BC25-C711FF8D58BF}"
+      DTS:EventID="-986637"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{22A588BA-FF36-4464-BEC2-71D7E37E2787}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\LOG ERROR"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{D3E36575-1014-4518-9373-CAA24920CEBC}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="LOG ERROR"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{98525CFE-E826-4424-9DC2-8FE809DDBED0}"
+              SQLTask:SqlStatementSource="DECLARE @EXEC_NUM BIGINT&#xA;SET @EXEC_NUM =?&#xA;DECLARE @PACKAGE_NAME VARCHAR(100)&#xA;SET @PACKAGE_NAME =?&#xA;DECLARE @TASK_NAME VARCHAR(100)&#xA;SET @TASK_NAME =?&#xA;DECLARE @ERROR_CODE VARCHAR(1000)&#xA;SET @ERROR_CODE=?&#xA;DECLARE @ERROR_DESC VARCHAR(3000)&#xA;SET @ERROR_DESC=?&#xA;DECLARE @START_TIME datetime&#xA;SET @START_TIME=convert(datetime, ?)&#xA;&#xA;INSERT INTO [dbo].[ETL_LOG]&#xA;       (ETL_EXECUTION_NUMBER, PACKAGE_NAME, TASK_NAME, TASK_TIMESTAMP, TASK_DURATION_SEC, TASK_STATUS, comments)&#xA;       VALUES&#xA;   &#xA;       (@EXEC_NUM&#xA;           ,@PACKAGE_NAME&#xA;           ,@TASK_NAME&#xA;           , getdate()&#xA;           ,DATEDIFF(SS, @START_TIME   ,GETDATE() )&#xA;           ,'ERROR'&#xA;   ,case when len (@ERROR_CODE)&lt;0 then 'ERR CD. = '+@ERROR_CODE+' || ' else '' end+@ERROR_DESC&#xA;           )&#xA;  " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="$Package::ETL_EXECUTION_NUMBER"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::TASK_START_TIME"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPostExecute]"
+      DTS:CreationName="OnPostExecute"
+      DTS:DTSID="{E6327048-77C3-4E77-A0ED-35F31EEA46D5}"
+      DTS:EventID="1644194048"
+      DTS:EventName="OnPostExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{A69771D3-C171-4293-942A-56C52DB2E6B6}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\LOG SUCCESS"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{52704812-5B84-4221-AD8C-343598163110}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="LOG SUCCESS"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{98525CFE-E826-4424-9DC2-8FE809DDBED0}"
+              SQLTask:SqlStatementSource="DECLARE @EXEC_NUM BIGINT&#xA;SET @EXEC_NUM =?&#xA;DECLARE @PACKAGE_NAME VARCHAR(100)&#xA;SET @PACKAGE_NAME =?&#xA;DECLARE @TASK_NAME VARCHAR(100)&#xA;SET @TASK_NAME =?&#xA;DECLARE @START_TIME datetime&#xA;SET @START_TIME=convert(datetime, ?,121)&#xA;&#xA;IF @TASK_NAME &lt;&gt;@PACKAGE_NAME &#xA;&#xA;INSERT INTO [dbo].[ETL_LOG]&#xA;       (ETL_EXECUTION_NUMBER, PACKAGE_NAME, TASK_NAME, TASK_TIMESTAMP, TASK_DURATION_SEC, TASK_STATUS)&#xA;       VALUES&#xA;   &#xA;       (@EXEC_NUM&#xA;           ,@PACKAGE_NAME&#xA;           ,@TASK_NAME&#xA;           , getdate()&#xA;           ,DATEDIFF(SS, @START_TIME   ,GETDATE() )&#xA;           ,'SUCCESS'&#xA;           )&#xA;;  " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="$Package::ETL_EXECUTION_NUMBER"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::TASK_START_TIME"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPreExecute]"
+      DTS:CreationName="OnPreExecute"
+      DTS:DTSID="{A58CA557-2745-4AE6-B526-C824148B6F26}"
+      DTS:EventID="1644194048"
+      DTS:EventName="OnPreExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{7FA05C0E-C9FC-490E-A099-CEC453ACBBEA}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPreExecute]\GET ETL START DATE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6076C782-CDD6-4A32-8E71-53B24F7848B7}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="GET ETL START DATE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{98525CFE-E826-4424-9DC2-8FE809DDBED0}"
+              SQLTask:SqlStatementSource="SELECT convert(varchar(50), GETDATE(),121) AS STARTTIME"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::TASK_START_TIME" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="sql12">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="130.4,41.6"
+          Id="Package\TRUNCATE"
+          TopLeft="15.5,5.49999999999995" />
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\VIEW_TO_SA"
+          TopLeft="5.50000000000001,107.1" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="78.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package.EventHandlers[OnError]\LOG ERROR"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="145.6,41.6"
+          Id="Package.EventHandlers[OnPostExecute]\LOG SUCCESS"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="183.2,41.6"
+          Id="Package.EventHandlers[OnPreExecute]\GET ETL START DATE"
+          TopLeft="47,25" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\VIEW_TO_SA">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\VIEW_TO_SA\OLE DB Source"
+          TopLeft="24.2928573326189,5.49999999999995" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\VIEW_TO_SA\OLE DB Destination"
+          TopLeft="13.8928573326188,102.776472029636" />
+        <EdgeLayout
+          Id="Package\VIEW_TO_SA.Paths[OLE DB Source Output]"
+          TopLeft="99.0928573326188,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.676472029636"
+              Start="0,0"
+              End="0,48.176472029636">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.176472029636" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\VIEW_TO_SA\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\VIEW_TO_SA\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
