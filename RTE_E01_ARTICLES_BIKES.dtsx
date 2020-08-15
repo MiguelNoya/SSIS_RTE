@@ -1,21 +1,21 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="6/15/2018 1:42:52 PM"
-  DTS:CreationName="Microsoft.Package"
+  DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="SRVBI"
   DTS:CreatorName="JAPMARCO\B2F"
   DTS:DTSID="{A4497CAA-3575-4CA4-B853-1DF3CA12C179}"
-  DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="14.0.3002.68"
   DTS:LocaleID="2070"
   DTS:ObjectName="RTE_E01_ARTICLES_BIKES"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="37"
-  DTS:VersionGUID="{82F89569-741A-4692-A0A2-4BCB9A42E80C}">
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{E3FE69B4-B0CE-4AF1-95C9-6471690C30CF}">
   <DTS:Property
-    DTS:Name="PackageFormatVersion">8</DTS:Property>
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -30,6 +30,16 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{2867B33D-DFA5-41E4-913B-A17AEC7B002D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETL_EXECUTION_NUMBER">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{C98BD75C-2C68-4103-BDE3-FFFB583F6B19}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
@@ -42,10 +52,10 @@
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\TRUNCATE"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="TRUNCATE"
       DTS:DTSID="{6E2C7CF5-2E71-41F4-BE46-AAF241DAC06A}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="TRUNCATE"
       DTS:ThreadHint="0">
@@ -58,10 +68,10 @@
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\VIEW_TO_SA"
-      DTS:CreationName="Microsoft.Pipeline"
+      DTS:CreationName="SSIS.Pipeline.3"
       DTS:Description="VIEW_TO_SA"
       DTS:DTSID="{97D6BAAA-BE56-4D36-86A3-FD0B1A87380E}"
-      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:ExecutableType="SSIS.Pipeline.3"
       DTS:LocaleID="-1"
       DTS:ObjectName="VIEW_TO_SA"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -72,7 +82,7 @@
           <components>
             <component
               refId="Package\VIEW_TO_SA\OLE DB Destination"
-              componentClassID="Microsoft.OLEDBDestination"
+              componentClassID="DTSAdapter.OLEDBDestination.3"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
               name="OLE DB Destination"
@@ -95,7 +105,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -255,7 +265,7 @@
             </component>
             <component
               refId="Package\VIEW_TO_SA\OLE DB Source"
-              componentClassID="Microsoft.OLEDBSource"
+              componentClassID="DTSAdapter.OLEDBSource.3"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
               name="OLE DB Source"
@@ -278,7 +288,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -524,10 +534,10 @@
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\LOG ERROR"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{DFC13839-A734-4706-860B-3A3CCDD5A0CF}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="LOG ERROR"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -599,10 +609,10 @@
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPostExecute]\LOG SUCCESS"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{DB91A11D-C329-4187-8923-49C7CCED4577}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="LOG SUCCESS"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -662,10 +672,10 @@
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPreExecute]\GET ETL START DATE"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{3A17CD18-4C23-4D72-A265-72094679102B}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="GET ETL START DATE"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -685,12 +695,12 @@
     </DTS:EventHandler>
   </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
 <Objects
-  Version="sql12">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  Version="sql11">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
@@ -699,25 +709,25 @@
         <NodeLayout
           Size="130.4,41.6"
           Id="Package\TRUNCATE"
-          TopLeft="14.9285714188401,5.49999999999995" />
+          TopLeft="11.5,5.49999999999995" />
         <NodeLayout
           Size="142.4,41.6"
           Id="Package\VIEW_TO_SA"
           TopLeft="5.50000000000001,107.1" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="78.41428570942,47.1">
+          TopLeft="76.7,47.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="0,52.5">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -777,21 +787,21 @@
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\VIEW_TO_SA\OLE DB Destination"
-          TopLeft="6.07142858115996,105.264705856614" />
+          TopLeft="5.50000000000001,107.1" />
         <EdgeLayout
           Id="Package\VIEW_TO_SA.Paths[OLE DB Source Output]"
-          TopLeft="90.98571429058,47.1">
+          TopLeft="90.7,47.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,58.1647058566136"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="0,50.6647058566136">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.6647058566136" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

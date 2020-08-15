@@ -1,0 +1,367 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/15/2018 1:42:52 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="SRVBI"
+  DTS:CreatorName="JAPMARCO\B2F"
+  DTS:DTSID="{DD244D89-A54E-4FA2-904A-29A71C361AA1}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="15.0.2000.68"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="RTE_T15_ROTEIRO"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="81"
+  DTS:VersionGUID="{3D3374A6-3479-458A-BE35-6F5D64FEC61D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="20"
+      DTS:DTSID="{1AB6F03E-BD30-4E5F-A918-C4E75C8D7404}"
+      DTS:ObjectName="ETL_EXECUTION_NUMBER">
+      <DTS:Property
+        DTS:DataType="20"
+        DTS:Name="ParameterValue">-1</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F909AA44-471F-4490-8097-7E9F85324BBE}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="P_DATA_INICIO">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A402D7A6-2464-493F-95BC-526A56563E48}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="P_LINHA_COD">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6680AF1E-B974-4115-A39E-9A55F835AD2A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="P_LISTA_PARAMETROS">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3E0197D0-53E4-4441-A396-37CF01A43E47}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="P_MATERIAL_COD">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DBF087C3-03FF-4EDF-9936-B125F2C4E385}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="P_SETOR_COD">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9B8BAFB2-507F-4E75-B946-F76B6B39FFA1}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="P_UNI_COD">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B74B9544-93B2-41CE-917A-008ECEC4E8E4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TASK_START_TIME">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Atualiza SCD de Roteiros"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{dcaca639-347c-44f2-9c4a-1c993c4c9de3}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Atualiza SCD de Roteiros"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}"
+          SQLTask:SqlStatementSource="IF OBJECT_ID('tempdb.dbo.#temp_scd_roteiros', 'U') IS NOT NULL&#xA; DROP TABLE #temp_scd_roteiros;&#xA;&#xA;SELECT &#xA;&#x9;  cast([Matnr] as varchar(30)) MATERIAL_COD,&#xA;&#x9; [Meins] UNI_COD&#xA;      , CONVERT(VARCHAR(10), [Aedat], 112) DATA_INICIO&#xA;      ,right([Verid] ,1) LINHA_COD&#xA;&#x9; ,1 SETOR_COD&#xA;&#x9; ,&#x9;max([Bmsch]) cadencia&#xA;&#x9;   ,max([Vgw01]) hh&#xA;&#x9;   ,max([Vge01]) UNI_HH &#xA;&#x9;   ,max([Vgw02]) hm&#xA;&#x9;   ,max([Vge02]) uni_hm&#xA;&#x9;   ,case when scd.ROT_KEY is null then 1 else 0 end flag_is_new&#xA;&#x9;   ,case when scd.data_inicio&lt;CONVERT(VARCHAR(10), [Aedat], 112) then 1 else 0 end flag_is_new_version&#xA;&#x9; into #temp_scd_roteiros&#xA;  FROM [RTE_BI_SA].[dbo].[SA_EXT_WS_ROTEIROS] lk left join [SA_LK_SCD_ROTEIROS] scd&#xA;&#x9;&#x9;&#x9;on &#xA;&#x9;&#x9;&#x9;cast([Matnr] as  varchar(30)) =scd.material_cod and&#xA;&#x9;&#x9;&#x9;[Meins]=scd.uni_Cod and&#xA;&#x9;&#x9;&#x9;right([Verid] ,1)=scd.linha_cod &#x9;&#x9;&#x9; &#xA;  where verid in ('LB1', 'LB2', 'LB3', 'LB4', 'LB5', 'LB6')&#xA; -- and ISNUMERIC(matnr)=1&#xA;  group by &#x9;  cast([Matnr] as  varchar(30)) ,&#xA;&#x9; [Meins] &#xA;      , CONVERT(VARCHAR(10), [Aedat], 112) &#xA;      ,right([Verid] ,1) ,&#xA;&#x9; scd.ROT_KEY ,&#xA;&#x9; scd.data_inicio,CONVERT(VARCHAR(10), [Aedat], 112) &#xA;  order by 3,1,2,4,5;&#xA;&#xA;    -- novos registos na SCD&#xA;    INSERT INTO [dbo].[SA_LK_SCD_ROTEIROS]&#xA;&#x9;&#x9;&#x9;([ROT_KEY]&#xA;&#x9;&#x9;&#x9;,[MATERIAL_COD]&#xA;&#x9;&#x9;&#x9;,[UNI_COD]&#xA;&#x9;&#x9;&#x9;,[SETOR_COD]&#xA;&#x9;&#x9;&#x9;,[LINHA_COD]&#xA;&#x9;&#x9;&#x9;,[CADENCIA]&#xA;&#x9;&#x9;&#x9;,[HH]&#xA;&#x9;&#x9;&#x9;,[UNI_HH]&#xA;&#x9;&#x9;&#x9;,[HM]&#xA;&#x9;&#x9;&#x9;,[UNI_HM]&#xA;&#x9;&#x9;&#x9;,[DATA_INICIO]&#xA;&#x9;&#x9;&#x9;,[DATA_FIM]&#xA;&#x9;&#x9;&#x9;,[FLAG_ATIVO])&#xA;&#x9;    select &#xA;&#x9;&#x9;  convert(varchar(max),&#xA;&#x9;&#x9;&#x9;HASHBYTES('MD5 ', &#xA;&#x9;&#x9;&#x9;cast(&#xA;&#x9;&#x9;&#x9;cast(lk.MATERIAL_COD as varchar(30))+cast(lk.uni_cod as varchar(10))+cast(lk.linha_cod as varchar(10))+cast(lk.data_inicio   as varchar(10)) +'1' &#xA;&#x9;&#x9;&#x9;as nvarchar(100)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;) ,2)&#xA;&#x9;&#x9;&#x9;,lk.MATERIAL_COD&#xA;&#x9;&#x9;&#x9;,lk.UNI_COD&#xA;&#x9;&#x9;&#x9;,lk.SETOR_COD&#xA;&#x9;&#x9;&#x9;,lk.LINHA_COD&#xA;&#x9;&#x9;&#x9;,lk.CADENCIA&#xA;&#x9;&#x9;&#x9;,lk.HH&#xA;&#x9;&#x9;&#x9;,lk.UNI_HH&#xA;&#x9;&#x9;&#x9;,lk.HM&#xA;&#x9;&#x9;&#x9;,lk.UNI_HM&#xA;&#x9;&#x9;&#x9;,lk.data_inicio&#xA;&#x9;&#x9;&#x9;,null DATA_FIM&#xA;&#x9;&#x9;&#x9;,1 FLAG_ATIVO&#xA;&#x9;&#x9;&#x9;from #temp_scd_roteiros lk &#xA;&#x9;&#x9;&#x9;where flag_is_new=1;&#xA;&#xA;    -- atualiza versões anteriores&#xA;    update scd&#xA;    set &#xA;    flag_ativo=0,&#xA;    [DATA_FIM]= CONVERT(VARCHAR(10), dateadd(dd, -1,cast(tmp.data_inicio as datetime)), 112)&#xA;    from  [dbo].[SA_LK_SCD_ROTEIROS] scd join #temp_scd_roteiros tmp&#xA;    on &#xA;    scd.[MATERIAL_COD]=tmp.MATERIAL_COD and&#xA;    scd.[UNI_COD]=tmp.UNI_COD and&#xA;    scd.[SETOR_COD]=tmp.SETOR_COD and&#xA;    scd.linha_cod=tmp.linha_cod &#xA;    where tmp.flag_is_new_version=1;&#xA;&#xA;    -- nova versão SCD&#xA;     INSERT INTO [dbo].[SA_LK_SCD_ROTEIROS]&#xA;&#x9;&#x9;&#x9;([ROT_KEY]&#xA;&#x9;&#x9;&#x9;,[MATERIAL_COD]&#xA;&#x9;&#x9;&#x9;,[UNI_COD]&#xA;&#x9;&#x9;&#x9;,[SETOR_COD]&#xA;&#x9;&#x9;&#x9;,[LINHA_COD]&#xA;&#x9;&#x9;&#x9;,[CADENCIA]&#xA;&#x9;&#x9;&#x9;,[HH]&#xA;&#x9;&#x9;&#x9;,[UNI_HH]&#xA;&#x9;&#x9;&#x9;,[HM]&#xA;&#x9;&#x9;&#x9;,[UNI_HM]&#xA;&#x9;&#x9;&#x9;,[DATA_INICIO]&#xA;&#x9;&#x9;&#x9;,[DATA_FIM]&#xA;&#x9;&#x9;&#x9;,[FLAG_ATIVO])&#xA;&#x9;    select &#xA;&#x9;&#x9;  convert(varchar(max),&#xA;&#x9;&#x9;&#x9;HASHBYTES('MD5 ', &#xA;&#x9;&#x9;&#x9;cast(&#xA;&#x9;&#x9;&#x9;cast(lk.MATERIAL_COD as varchar(30))+cast(lk.uni_cod as varchar(10))+cast(lk.linha_cod as varchar(10))+cast(lk.data_inicio   as varchar(10)) +'1' &#xA;&#x9;&#x9;&#x9;as nvarchar(100)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;) ,2)&#xA;&#x9;&#x9;&#x9;,lk.MATERIAL_COD&#xA;&#x9;&#x9;&#x9;,lk.UNI_COD&#xA;&#x9;&#x9;&#x9;,lk.SETOR_COD&#xA;&#x9;&#x9;&#x9;,lk.LINHA_COD&#xA;&#x9;&#x9;&#x9;,lk.CADENCIA&#xA;&#x9;&#x9;&#x9;,lk.HH&#xA;&#x9;&#x9;&#x9;,lk.UNI_HH&#xA;&#x9;&#x9;&#x9;,lk.HM&#xA;&#x9;&#x9;&#x9;,lk.UNI_HM&#xA;&#x9;&#x9;&#x9;,lk.data_inicio&#xA;&#x9;&#x9;&#x9;,null DATA_FIM&#xA;&#x9;&#x9;&#x9;,1 FLAG_ATIVO&#xA;&#x9;&#x9;&#x9;from #temp_scd_roteiros lk &#xA;&#x9;&#x9;&#x9;where flag_is_new_version=1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{453D6031-3C41-4554-8381-6E88800B140E}"
+      DTS:EventID="-986637"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{B34B79D2-0FC5-4F71-9A2A-4CA80B3E5003}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\LOG ERROR"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{66B90B93-CB26-4FB9-AD69-12EEA18946C0}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="LOG ERROR"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{98525CFE-E826-4424-9DC2-8FE809DDBED0}"
+              SQLTask:SqlStatementSource="DECLARE @EXEC_NUM BIGINT&#xA;SET @EXEC_NUM =?&#xA;DECLARE @PACKAGE_NAME VARCHAR(100)&#xA;SET @PACKAGE_NAME =?&#xA;DECLARE @TASK_NAME VARCHAR(100)&#xA;SET @TASK_NAME =?&#xA;DECLARE @ERROR_CODE VARCHAR(1000)&#xA;SET @ERROR_CODE=?&#xA;DECLARE @ERROR_DESC VARCHAR(3000)&#xA;SET @ERROR_DESC=?&#xA;DECLARE @START_TIME datetime&#xA;SET @START_TIME=convert(datetime, ?)&#xA;&#xA;INSERT INTO [dbo].[ETL_LOG]&#xA;       (ETL_EXECUTION_NUMBER, PACKAGE_NAME, TASK_NAME, TASK_TIMESTAMP, TASK_DURATION_SEC, TASK_STATUS, comments)&#xA;       VALUES&#xA;   &#xA;       (@EXEC_NUM&#xA;           ,@PACKAGE_NAME&#xA;           ,@TASK_NAME&#xA;           , getdate()&#xA;           ,DATEDIFF(SS, @START_TIME   ,GETDATE() )&#xA;           ,'ERROR'&#xA;   ,case when len (@ERROR_CODE)&lt;0 then 'ERR CD. = '+@ERROR_CODE+' || ' else '' end+@ERROR_DESC&#xA;           )&#xA;  " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="$Package::ETL_EXECUTION_NUMBER"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::TASK_START_TIME"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPostExecute]"
+      DTS:CreationName="OnPostExecute"
+      DTS:DTSID="{602FDD94-D5B7-49FF-85D9-2B9ABBBDBBA5}"
+      DTS:EventID="1644194048"
+      DTS:EventName="OnPostExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{1DB5D3CD-DA65-4417-B7F4-45E2338A5AA6}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\LOG SUCCESS"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{85EE48BE-F271-4642-8DF5-D2C3AE772456}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="LOG SUCCESS"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{98525CFE-E826-4424-9DC2-8FE809DDBED0}"
+              SQLTask:SqlStatementSource="DECLARE @EXEC_NUM BIGINT&#xA;SET @EXEC_NUM =?&#xA;DECLARE @PACKAGE_NAME VARCHAR(100)&#xA;SET @PACKAGE_NAME =?&#xA;DECLARE @TASK_NAME VARCHAR(100)&#xA;SET @TASK_NAME =?&#xA;DECLARE @START_TIME datetime&#xA;SET @START_TIME=convert(datetime, ?,121)&#xA;&#xA;IF @TASK_NAME &lt;&gt;@PACKAGE_NAME &#xA;&#xA;INSERT INTO [dbo].[ETL_LOG]&#xA;       (ETL_EXECUTION_NUMBER, PACKAGE_NAME, TASK_NAME, TASK_TIMESTAMP, TASK_DURATION_SEC, TASK_STATUS)&#xA;       VALUES&#xA;   &#xA;       (@EXEC_NUM&#xA;           ,@PACKAGE_NAME&#xA;           ,@TASK_NAME&#xA;           , getdate()&#xA;           ,DATEDIFF(SS, @START_TIME   ,GETDATE() )&#xA;           ,'SUCCESS'&#xA;           )&#xA;;  " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="$Package::ETL_EXECUTION_NUMBER"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::TASK_START_TIME"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPreExecute]"
+      DTS:CreationName="OnPreExecute"
+      DTS:DTSID="{308BD189-E314-42A0-A597-9A0A782F44B7}"
+      DTS:EventID="1644194048"
+      DTS:EventName="OnPreExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{AB40A2AB-701B-42CB-A6B4-40DEAE94A0DB}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPreExecute]\GET ETL START DATE"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{BC42B193-E709-45AF-892D-51848B0A4268}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="GET ETL START DATE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{98525CFE-E826-4424-9DC2-8FE809DDBED0}"
+              SQLTask:SqlStatementSource="SELECT convert(varchar(50), GETDATE(),121) AS STARTTIME"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::TASK_START_TIME" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="194.4,41.6"
+          Id="Package\Atualiza SCD de Roteiros"
+          TopLeft="5.49999999999999,5.49999999999995" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package.EventHandlers[OnError]\LOG ERROR"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="145.6,41.6"
+          Id="Package.EventHandlers[OnPostExecute]\LOG SUCCESS"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="183.2,41.6"
+          Id="Package.EventHandlers[OnPreExecute]\GET ETL START DATE"
+          TopLeft="47,25" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

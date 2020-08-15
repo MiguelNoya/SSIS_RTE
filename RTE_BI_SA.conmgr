@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="RTE_BI_SA"
+  DTS:DTSID="{0BA6BB9C-6062-4B09-9F0E-79FA47291F78}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=172.18.100.28;User ID=miguel.teixeira;Initial Catalog=RTE_BI_SA;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="LpukCXui+A=="
+        p4:IV="+16ZL60APTM=" xmlns:p4="www.microsoft.com/SqlServer/SSIS">ypb7Qps/FNike312bD8u+IHX1wuPhN1tevEyJf2ny+1ghjX7fPQ1bm9xTN2qqlGheJxq9c6/8tBBPYfGVp2nIuaDFHdPlU20l/kQecrAScaZ7ClTJraAlQg5fUS7usSlJCakhPlfaI8HhU+0BTVjkHnorSgv0NbaxbhorZrXvEg=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

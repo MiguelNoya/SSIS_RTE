@@ -1,21 +1,21 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="6/15/2018 1:42:52 PM"
-  DTS:CreationName="Microsoft.Package"
+  DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="SRVBI"
   DTS:CreatorName="JAPMARCO\B2F"
-  DTS:DTSID="{7EC1764D-E47E-431A-A5D1-F82DB3A18179}"
-  DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:DTSID="{066BDF79-94D4-40B7-8289-2A5E70A8E909}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="14.0.3002.68"
   DTS:LocaleID="2070"
-  DTS:ObjectName="RTE_T01_FACT_OBJ_CUMP"
+  DTS:ObjectName="RTE_T58_FACT_OBJ_CUMP"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{1976D86E-3183-4D7C-BB9D-D888EBA64A47}">
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{A1546A63-D368-467C-B9EA-180CE8AC0094}">
   <DTS:Property
-    DTS:Name="PackageFormatVersion">8</DTS:Property>
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -42,10 +42,10 @@
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\SA_TO_SA_FACT"
-      DTS:CreationName="Microsoft.Pipeline"
+      DTS:CreationName="SSIS.Pipeline.3"
       DTS:Description="SA_TO_SA_FACT"
       DTS:DTSID="{B1CAF204-A0CB-46A4-921F-39D17D28D7C5}"
-      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:ExecutableType="SSIS.Pipeline.3"
       DTS:LocaleID="-1"
       DTS:ObjectName="SA_TO_SA_FACT"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -56,7 +56,7 @@
           <components>
             <component
               refId="Package\SA_TO_SA_FACT\OLE DB Destination"
-              componentClassID="Microsoft.OLEDBDestination"
+              componentClassID="DTSAdapter.OLEDBDestination.3"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
               name="OLE DB Destination"
@@ -79,7 +79,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -209,7 +209,7 @@
             </component>
             <component
               refId="Package\SA_TO_SA_FACT\OLE DB Source"
-              componentClassID="Microsoft.OLEDBSource"
+              componentClassID="DTSAdapter.OLEDBSource.3"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
               name="OLE DB Source"
@@ -232,7 +232,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Número Mat] AS MATERIAL_COD
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Número Mat] AS MATERIAL_COD
 --, LINHA_COD_DIA
 --, MAX(OF_COD) AS OF_COD
 , SUBSTRING(MAX(CAST(LINHA_COD_DIA AS varchar(50))),2,1) AS LINHA_COD
@@ -329,7 +329,7 @@ SELECT [DATA]
       ,[OF5_SAB]	 =CAST([OF5_SAB] AS VARCHAR(50))
       ,[L6_SAB]		 =CAST([L6_SAB]	 AS VARCHAR(50))
       ,[OF6_SAB]	 =CAST([OF6_SAB] AS VARCHAR(50))
-FROM SA_EXT_OBJ_CUMP
+FROM SA_EXT_EXCEL_OBJ_CUMP
 ) AUX
 
 UNPIVOT
@@ -584,10 +584,10 @@ GROUP BY [DATA], [Número Mat], QTD, LINHA_COD_DIA</property>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\TRUNCATE"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="TRUNCATE"
       DTS:DTSID="{6E0CC10F-48EE-4FDE-9365-039A65CAFD7A}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="TRUNCATE"
       DTS:ThreadHint="0">
@@ -632,10 +632,10 @@ GROUP BY [DATA], [Número Mat], QTD, LINHA_COD_DIA</property>
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\LOG ERROR"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{3E9A7CB5-2D79-4EEE-8A08-1FDF14451690}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="LOG ERROR"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -707,10 +707,10 @@ GROUP BY [DATA], [Número Mat], QTD, LINHA_COD_DIA</property>
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPostExecute]\LOG SUCCESS"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{8A939D18-9110-4ADC-A9E4-E5B71CB5C436}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="LOG SUCCESS"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -770,10 +770,10 @@ GROUP BY [DATA], [Número Mat], QTD, LINHA_COD_DIA</property>
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPreExecute]\GET ETL START DATE"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{7220257B-5656-4CFC-8192-7D8F7B6A5281}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="GET ETL START DATE"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -797,7 +797,7 @@ GROUP BY [DATA], [Número Mat], QTD, LINHA_COD_DIA</property>
 <!--If you manually edit this section and make a mistake, you can delete it. -->
 <!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
-  Version="sql12">
+  Version="sql11">
   <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
@@ -805,13 +805,13 @@ GROUP BY [DATA], [Número Mat], QTD, LINHA_COD_DIA</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="130.4,41.6"
-          Id="Package\TRUNCATE"
-          TopLeft="14.9285714188401,5.49999999999995" />
-        <NodeLayout
           Size="159.2,41.6"
           Id="Package\SA_TO_SA_FACT"
           TopLeft="5.50000000000001,107.1" />
+        <NodeLayout
+          Size="130.4,41.6"
+          Id="Package\TRUNCATE"
+          TopLeft="14.9285714188401,5.49999999999995" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="82.61428570942,47.1">
@@ -912,19 +912,6 @@ GROUP BY [DATA], [Número Mat], QTD, LINHA_COD_DIA</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\SA_TO_SA_FACT\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">View</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\SA_TO_SA_FACT\OLE DB Destination">
     <Properties>
       <Property>
@@ -934,6 +921,19 @@ GROUP BY [DATA], [Número Mat], QTD, LINHA_COD_DIA</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SA_TO_SA_FACT\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

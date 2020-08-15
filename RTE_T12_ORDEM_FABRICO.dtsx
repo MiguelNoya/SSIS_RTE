@@ -2,25 +2,25 @@
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="6/15/2018 1:42:52 PM"
-  DTS:CreationName="Microsoft.Package"
+  DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="SRVBI"
   DTS:CreatorName="JAPMARCO\B2F"
-  DTS:DTSID="{3CC52371-9CB4-4A98-9AD3-B623FF291E82}"
-  DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.1300.371"
+  DTS:DTSID="{03595E86-EF6C-4B42-B725-CC68D0B16ED9}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="14.0.3002.68"
   DTS:LocaleID="2070"
-  DTS:ObjectName="9_M_INDEX_MAINTENANCE"
+  DTS:ObjectName="RTE_T12_ORDEM_FABRICO"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="75"
-  DTS:VersionGUID="{2073F87E-EF1A-443B-AF75-BA08AB765CE3}">
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{5B3F2F74-6546-47B0-A3E2-EA17D082120E}">
   <DTS:Property
-    DTS:Name="PackageFormatVersion">8</DTS:Property>
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="20"
-      DTS:DTSID="{581419EF-2C65-4E08-BB69-9E22E1F8E7EC}"
+      DTS:DTSID="{FC29BB56-381C-46F4-8D36-738312BFDFA6}"
       DTS:ObjectName="ETL_EXECUTION_NUMBER">
       <DTS:Property
         DTS:DataType="20"
@@ -30,7 +30,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D984B845-3CFB-489E-A5C2-AE348ECDE7A6}"
+      DTS:DTSID="{2C4C9A5C-2C06-46E1-A59B-35C2153430C7}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="TASK_START_TIME">
@@ -41,28 +41,53 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\REBUILD OR REORGANIZE INDEX IF NEEDED"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{A4A99084-B933-4B76-A5C0-AFAA923E7CAF}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:refId="Package\Elimina tabela de OF"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Elimina tabela de OF"
+      DTS:DTSID="{6D2ED38E-B447-445F-A736-5754D030BBF1}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
-      DTS:ObjectName="REBUILD OR REORGANIZE INDEX IF NEEDED"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ObjectName="Elimina tabela de OF"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{44C420B4-5DC9-420D-A1E0-D747E8F0363B}"
-          SQLTask:SqlStatementSource="EXEC&#x9;  [dbo].[sp_Rebuild_or_reorganize_index]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}"
+          SQLTask:SqlStatementSource="truncate table sa_lk_ordem_fabrico" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Data"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Load Data"
+      DTS:DTSID="{9F52BCB8-1D07-4B52-8292-9CBD6068D054}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Data"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}"
+          SQLTask:SqlStatementSource="insert into rte_bi_sa.[dbo].[SA_LK_ORDEM_FABRICO]&#xA;([OF_COD], [OF_NUM_MATERIAL], [OF_DAT_CRI], [OF_HOR_CRI])&#xA;SELECT [ofabrico]&#xA;,[ref]&#xA;,CONVERT(VARCHAR(10), [criado_em], 112) data&#xA;,datepart(HH,CONVERT(VARCHAR(8), [criado_em], 108))*100 + datepart(MI,CONVERT(VARCHAR(8), [criado_em], 108)) horamin&#xA;FROM [RTE_BI_SA].[dbo].[SA_EXT_ORDENS_FABRICO]&#xA;union &#xA;select distinct of_cod ofabrico, material_cod ref,CONVERT(VARCHAR(10), [data_cri_etiqueta], 112) data , &#xA;hora_cri_etiqueta&#xA;from [RTE_BI_SA].[dbo].[SA_FACT_ETIQUETAS]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição]"
+      DTS:CreationName=""
+      DTS:DTSID="{19070B5E-02DC-4DB7-82FB-CA694ACF8C2D}"
+      DTS:From="Package\Elimina tabela de OF"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição"
+      DTS:To="Package\Load Data" />
+  </DTS:PrecedenceConstraints>
   <DTS:EventHandlers>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{A8BA06B5-3537-482F-982B-E21D5D122819}"
+      DTS:DTSID="{1A552C3A-3280-4B75-92FB-4D9198AF5EA3}"
       DTS:EventID="-986637"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
@@ -70,7 +95,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{D1994E54-9433-4EE1-BBDD-4ADDAD7A1C01}"
+          DTS:DTSID="{862F0441-5244-4B7C-841C-8814BBC85A3F}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -81,10 +106,10 @@
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\LOG ERROR"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{3687401B-D008-4A1C-BC94-1522B6BB5726}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{16780FD5-D6C3-4F95-8425-F280E171DD36}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="LOG ERROR"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -137,7 +162,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnPostExecute]"
       DTS:CreationName="OnPostExecute"
-      DTS:DTSID="{A7294D1C-335A-4662-A75E-3D69538DCE80}"
+      DTS:DTSID="{C46E9685-6FCE-493B-A5FE-8FC5B103CAAF}"
       DTS:EventID="1644194048"
       DTS:EventName="OnPostExecute"
       DTS:LocaleID="-1">
@@ -145,7 +170,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{A4521D60-D6D0-4CC4-B325-DC9271E41E3B}"
+          DTS:DTSID="{3680B660-9061-4ECD-8F67-989813BA7080}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -156,10 +181,10 @@
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPostExecute]\LOG SUCCESS"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{8E074279-F3E9-4C08-8AF4-412C29D4410C}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{6D0F4E7A-F76F-471B-B00C-F24837EF3AE1}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="LOG SUCCESS"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -200,7 +225,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnPreExecute]"
       DTS:CreationName="OnPreExecute"
-      DTS:DTSID="{AC9EAB53-F782-429C-9953-A65405C0BB31}"
+      DTS:DTSID="{F9D5828B-842D-4134-BC02-A97DDBC469B1}"
       DTS:EventID="1644194048"
       DTS:EventName="OnPreExecute"
       DTS:LocaleID="-1">
@@ -208,7 +233,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{BE65785A-58F9-409C-B4D6-DDE3667E11A6}"
+          DTS:DTSID="{4395126A-D0C9-4C22-A424-6EEDA05FDA0C}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -219,10 +244,10 @@
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPreExecute]\GET ETL START DATE"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{9D217FDB-4C93-4DCE-9B21-4D6C6D41869F}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{B77CF2A3-8658-4572-B5C5-7BD32D74F3A8}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="GET ETL START DATE"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -246,17 +271,43 @@
 <!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
 <!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
 <Objects
-  Version="sql12">
+  Version="sql11">
   <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="295.2,41.6"
-          Id="Package\REBUILD OR REORGANIZE INDEX IF NEEDED"
-          TopLeft="42.5,5.5" />
+          Size="192.8,41.6"
+          Id="Package\Elimina tabela de OF"
+          TopLeft="5.50000000000001,5.49999999999995" />
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\Load Data"
+          TopLeft="38.7,107.1" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="101.9,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -280,7 +331,7 @@
         <NodeLayout
           Size="145.6,41.6"
           Id="Package.EventHandlers[OnPostExecute]\LOG SUCCESS"
-          TopLeft="52,21" />
+          TopLeft="60,60" />
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>

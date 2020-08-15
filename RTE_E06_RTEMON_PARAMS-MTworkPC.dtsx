@@ -12,8 +12,8 @@
   DTS:ObjectName="RTE_E06_RTEMON_PARAMS"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="57"
-  DTS:VersionGUID="{C97BA2CA-B710-4001-A099-8AAF62D8C5B1}">
+  DTS:VersionBuild="71"
+  DTS:VersionGUID="{4862DF9A-18D3-440F-8F39-ECAF62FBBB43}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -63,6 +63,834 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
+          DTS:refId="Package\Sequence Container\EXCEL_TO_SA_AD"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="EXCEL_TO_SA_TURNOS"
+          DTS:DTSID="{f4aaa264-dcd6-4019-b2d4-c58f8a8a70b4}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="EXCEL_TO_SA_AD"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Inputs[Data Conversion Input].Columns[Tipo Controlo]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Tipo Controlo"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Tipo Controlo]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Inputs[Data Conversion Input].Columns[Defeito Nível1]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Defeito Nível1"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Defeito Nível1]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Inputs[Data Conversion Input].Columns[Defeito Nível2]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Defeito Nível2"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Defeito Nível2]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Inputs[Data Conversion Input].Columns[Defeito Nível3]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Defeito Nível3"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Defeito Nível3]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Inputs[Data Conversion Input].Columns[Defeito Nível4]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Defeito Nível4"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Defeito Nível4]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Inputs[Data Conversion Input].Columns[Outros]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Outros"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Outros]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Inputs[Data Conversion Input].Columns[Defeito]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Defeito"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Defeito]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Inputs[Data Conversion Input].Columns[Tipo defeito]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Tipo defeito"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Tipo defeito]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Inputs[Data Conversion Input].Columns[Componente / conjunto]"
+                          cachedDataType="r8"
+                          cachedName="Componente / conjunto"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Componente / conjunto]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Tipo Controlo]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="250"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Tipo Controlo]"
+                          name="Cópia de Tipo Controlo"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Tipo Controlo]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Defeito Nível1]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="250"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Defeito Nível1]"
+                          name="Cópia de Defeito Nível1"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Defeito Nível1]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Defeito Nível2]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="250"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Defeito Nível2]"
+                          name="Cópia de Defeito Nível2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Defeito Nível2]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Defeito Nível3]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="250"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Defeito Nível3]"
+                          name="Cópia de Defeito Nível3"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Defeito Nível3]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Defeito Nível4]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="250"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Defeito Nível4]"
+                          name="Cópia de Defeito Nível4"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Defeito Nível4]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Outros]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="250"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Outros]"
+                          name="Cópia de Outros"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Outros]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Defeito]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="250"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Defeito]"
+                          name="Cópia de Defeito"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Defeito]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Tipo defeito]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="250"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Tipo defeito]"
+                          name="Cópia de Tipo defeito"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Tipo defeito]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Componente / conjunto]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="250"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Componente / conjunto]"
+                          name="Cópia de Componente / conjunto"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Componente / conjunto]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[SA_EXT_EXCEL_AD]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SA]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Tipo Controlo]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="Cópia de Tipo Controlo"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo Controlo]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Tipo Controlo]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Defeito Nível1]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="Cópia de Defeito Nível1"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Defeito Nível1]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Defeito Nível1]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Defeito Nível2]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="Cópia de Defeito Nível2"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Defeito Nível2]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Defeito Nível2]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Defeito Nível3]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="Cópia de Defeito Nível3"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Defeito Nível3]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Defeito Nível3]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Defeito Nível4]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="Cópia de Defeito Nível4"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Defeito Nível4]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Defeito Nível4]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Outros]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="Cópia de Outros"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Outros]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Outros]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Defeito]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="Cópia de Defeito"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Defeito]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Defeito]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Tipo defeito]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="Cópia de Tipo defeito"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo defeito]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Tipo defeito]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Componente / conjunto]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="Cópia de Componente / conjunto"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Componente / conjunto]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Componente / conjunto]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo Controlo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Tipo Controlo" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Defeito Nível1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Defeito Nível1" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Defeito Nível2]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Defeito Nível2" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Defeito Nível3]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Defeito Nível3" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Defeito Nível4]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Defeito Nível4" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Outros]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Outros" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Defeito]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Defeito" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo defeito]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Tipo defeito" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Componente / conjunto]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Componente / conjunto" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Excel Source"
+                  name="ÁRVORE DEFEITOS"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">manuseamento_indevido</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT [Tipo Controlo], [Defeito Nível1], [Defeito Nível2], [Defeito Nível3], [Defeito Nível4], Outros, Defeito, [Tipo defeito], [Componente / conjunto]
+FROM     ARVORE_DEFEITOS
+where [Defeito Nível1] is not null</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[RTEMON_PARAMS]"
+                      connectionManagerRefId="Package.ConnectionManagers[RTEMON_PARAMS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Tipo Controlo]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].ExternalColumns[Tipo Controlo]"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Tipo Controlo]"
+                          name="Tipo Controlo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Defeito Nível1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].ExternalColumns[Defeito Nível1]"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Defeito Nível1]"
+                          name="Defeito Nível1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Defeito Nível2]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].ExternalColumns[Defeito Nível2]"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Defeito Nível2]"
+                          name="Defeito Nível2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Defeito Nível3]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].ExternalColumns[Defeito Nível3]"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Defeito Nível3]"
+                          name="Defeito Nível3"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Defeito Nível4]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].ExternalColumns[Defeito Nível4]"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Defeito Nível4]"
+                          name="Defeito Nível4"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Outros]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].ExternalColumns[Outros]"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Outros]"
+                          name="Outros"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Defeito]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].ExternalColumns[Defeito]"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Defeito]"
+                          name="Defeito"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Tipo defeito]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].ExternalColumns[Tipo defeito]"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Tipo defeito]"
+                          name="Tipo defeito"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Componente / conjunto]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].ExternalColumns[Componente / conjunto]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].Columns[Componente / conjunto]"
+                          name="Componente / conjunto"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].ExternalColumns[Tipo Controlo]"
+                          dataType="wstr"
+                          length="255"
+                          name="Tipo Controlo" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].ExternalColumns[Defeito Nível1]"
+                          dataType="wstr"
+                          length="255"
+                          name="Defeito Nível1" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].ExternalColumns[Defeito Nível2]"
+                          dataType="wstr"
+                          length="255"
+                          name="Defeito Nível2" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].ExternalColumns[Defeito Nível3]"
+                          dataType="wstr"
+                          length="255"
+                          name="Defeito Nível3" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].ExternalColumns[Defeito Nível4]"
+                          dataType="wstr"
+                          length="255"
+                          name="Defeito Nível4" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].ExternalColumns[Outros]"
+                          dataType="wstr"
+                          length="255"
+                          name="Outros" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].ExternalColumns[Defeito]"
+                          dataType="wstr"
+                          length="255"
+                          name="Defeito" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].ExternalColumns[Tipo defeito]"
+                          dataType="wstr"
+                          length="255"
+                          name="Tipo defeito" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output].ExternalColumns[Componente / conjunto]"
+                          dataType="r8"
+                          name="Componente / conjunto" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output]"
+                      isErrorOut="true"
+                      name="Excel Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[Tipo Controlo]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[Tipo Controlo]"
+                          name="Tipo Controlo" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[Defeito Nível1]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[Defeito Nível1]"
+                          name="Defeito Nível1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[Defeito Nível2]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[Defeito Nível2]"
+                          name="Defeito Nível2" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[Defeito Nível3]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[Defeito Nível3]"
+                          name="Defeito Nível3" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[Defeito Nível4]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[Defeito Nível4]"
+                          name="Defeito Nível4" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[Outros]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[Outros]"
+                          name="Outros" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[Defeito]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[Defeito]"
+                          name="Defeito" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[Tipo defeito]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[Tipo defeito]"
+                          name="Tipo defeito" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[Componente / conjunto]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[Componente / conjunto]"
+                          name="Componente / conjunto" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\EXCEL_TO_SA_AD.Paths[Data Conversion Output]"
+                  endId="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Sequence Container\EXCEL_TO_SA_AD.Paths[Excel Source Output]"
+                  endId="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Excel Source Output"
+                  startId="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS.Outputs[Excel Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Sequence Container\EXCEL_TO_SA_AV_5S"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="EXCEL_TO_SA_AV_5S"
@@ -102,7 +930,7 @@
                       description="The SQL command to be executed."
                       name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Ano ], mês, turno, l1, l2, l3, l4, l5, l6
-FROM     avaliacao_5S
+FROM     ['Avaliação 5S$']
 WHERE  (Ano IS NOT NULL)</property>
                     <property
                       dataType="System.String"
@@ -550,9 +1378,456 @@ WHERE  (Ano IS NOT NULL)</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="EXCEL_TO_SA_LINHAS"
+          DTS:DTSID="{c6d707b3-5d62-4d7d-9077-3e01ca9d6e4a}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="EXCEL_TO_SA_LINHAS"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion.Inputs[Data Conversion Input].Columns[desc_sector]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="desc_sector"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].Columns[desc_sector]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion.Inputs[Data Conversion Input].Columns[desc_linha]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="desc_linha"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].Columns[desc_linha]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion.Outputs[Data Conversion Output].Columns[CV_desc_sector]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="200"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion.Outputs[Data Conversion Output].Columns[CV_desc_sector]"
+                          name="CV_desc_sector"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].Columns[desc_sector]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion.Outputs[Data Conversion Output].Columns[CV_desc_linha]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="200"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion.Outputs[Data Conversion Output].Columns[CV_desc_linha]"
+                          name="CV_desc_linha"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].Columns[desc_linha]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Excel Source"
+                  name="LINHAS"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">manuseamento_indevido</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT cod_sector, desc_sector, cod_linha, desc_linha
+FROM     ['Sector-Linha$']
+WHERE  (cod_sector IS NOT NULL) AND (cod_linha IS NOT NULL)</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[RTEMON_PARAMS]"
+                      connectionManagerRefId="Package.ConnectionManagers[RTEMON_PARAMS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].Columns[cod_sector]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].ExternalColumns[cod_sector]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].Columns[cod_sector]"
+                          name="cod_sector"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].Columns[desc_sector]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].ExternalColumns[desc_sector]"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].Columns[desc_sector]"
+                          name="desc_sector"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].Columns[cod_linha]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].ExternalColumns[cod_linha]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].Columns[cod_linha]"
+                          name="cod_linha"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].Columns[desc_linha]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].ExternalColumns[desc_linha]"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].Columns[desc_linha]"
+                          name="desc_linha"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].ExternalColumns[cod_sector]"
+                          dataType="r8"
+                          name="cod_sector" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].ExternalColumns[desc_sector]"
+                          dataType="wstr"
+                          length="255"
+                          name="desc_sector" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].ExternalColumns[cod_linha]"
+                          dataType="r8"
+                          name="cod_linha" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].ExternalColumns[desc_linha]"
+                          dataType="wstr"
+                          length="255"
+                          name="desc_linha" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Error Output]"
+                      isErrorOut="true"
+                      name="Excel Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Error Output].Columns[cod_sector]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Error Output].Columns[cod_sector]"
+                          name="cod_sector" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Error Output].Columns[desc_sector]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Error Output].Columns[desc_sector]"
+                          name="desc_sector" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Error Output].Columns[cod_linha]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Error Output].Columns[cod_linha]"
+                          name="cod_linha" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Error Output].Columns[desc_linha]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Error Output].Columns[desc_linha]"
+                          name="desc_linha" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[SA_EXT_EXCEL_LINHAS]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SA]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cod_sector]"
+                          cachedDataType="r8"
+                          cachedName="cod_sector"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cod_sector]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].Columns[cod_sector]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cod_linha]"
+                          cachedDataType="r8"
+                          cachedName="cod_linha"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cod_linha]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output].Columns[cod_linha]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CV_desc_sector]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="CV_desc_sector"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[desc_sector]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion.Outputs[Data Conversion Output].Columns[CV_desc_sector]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CV_desc_linha]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="CV_desc_linha"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[desc_linha]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion.Outputs[Data Conversion Output].Columns[CV_desc_linha]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cod_sector]"
+                          dataType="i4"
+                          name="cod_sector" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[desc_sector]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="desc_sector" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cod_linha]"
+                          dataType="i4"
+                          name="cod_linha" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[desc_linha]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="desc_linha" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS.Paths[Data Conversion Output]"
+                  endId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Sequence Container\EXCEL_TO_SA_LINHAS.Paths[Excel Source Output]"
+                  endId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Excel Source Output"
+                  startId="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS.Outputs[Excel Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Sequence Container\EXCEL_TO_SA_OBJETIVOS"
           DTS:CreationName="Microsoft.Pipeline"
-          DTS:Description="EXCEL_TO_SA_MI"
+          DTS:Description="EXCEL_TO_SA_OBJETIVOS"
           DTS:DTSID="{6b9efade-2027-4b41-b264-d489ba62c11a}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -3558,7 +4833,7 @@ WHERE  (DATA IS NOT NULL)</property>
         <DTS:Executable
           DTS:refId="Package\Sequence Container\EXCEL_TO_SA_PROD_CONVERTIDA"
           DTS:CreationName="Microsoft.Pipeline"
-          DTS:Description="EXCEL_TO_SA_MI"
+          DTS:Description="EXCEL_TO_SA_PROD_CONVERTIDA"
           DTS:DTSID="{65202c8e-1208-4039-bd88-736fd5d35cd8}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -3951,7 +5226,7 @@ where [referência] is not null</property>
         <DTS:Executable
           DTS:refId="Package\Sequence Container\EXCEL_TO_SA_SE"
           DTS:CreationName="Microsoft.Pipeline"
-          DTS:Description="EXCEL_TO_SA_MI"
+          DTS:Description="EXCEL_TO_SA_SE"
           DTS:DTSID="{4B13B3A3-FECA-411D-9A94-419FD9ABEB53}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -4906,6 +6181,406 @@ WHERE  (Chave IS NOT NULL)</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="EXCEL_TO_SA_TURNOS"
+          DTS:DTSID="{eb4a6f42-7a34-4052-9b1a-c74f25492f09}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="EXCEL_TO_SA_TURNOS"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\Data Conversion"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\Data Conversion.Inputs[Data Conversion Input].Columns[desc_turno]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="desc_turno"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Output].Columns[desc_turno]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\Data Conversion.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\Data Conversion.Outputs[Data Conversion Output].Columns[CV_desc_turno]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="200"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\Data Conversion.Outputs[Data Conversion Output].Columns[CV_desc_turno]"
+                          name="CV_desc_turno"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Output].Columns[desc_turno]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\Data Conversion.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[SA_EXT_EXCEL_TURNO]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SA]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cod_sector]"
+                          cachedDataType="r8"
+                          cachedName="cod_sector"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cod_sector]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Output].Columns[cod_sector]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cod_turno]"
+                          cachedDataType="r8"
+                          cachedName="cod_turno"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cod_turno]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Output].Columns[cod_turno]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CV_desc_turno]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="CV_desc_turno"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[desc_turno]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\Data Conversion.Outputs[Data Conversion Output].Columns[CV_desc_turno]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cod_sector]"
+                          dataType="i4"
+                          name="cod_sector" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cod_turno]"
+                          dataType="i4"
+                          name="cod_turno" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[desc_turno]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="desc_turno" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Excel Source"
+                  name="TURNOS"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">manuseamento_indevido</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT cod_sector, cod_turno, desc_turno
+FROM     [Turno$]
+WHERE  (cod_sector IS NOT NULL) AND (cod_turno IS NOT NULL)</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[RTEMON_PARAMS]"
+                      connectionManagerRefId="Package.ConnectionManagers[RTEMON_PARAMS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Output].Columns[cod_sector]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Output].ExternalColumns[cod_sector]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Output].Columns[cod_sector]"
+                          name="cod_sector"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Output].Columns[cod_turno]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Output].ExternalColumns[cod_turno]"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Output].Columns[cod_turno]"
+                          name="cod_turno"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Output].Columns[desc_turno]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Output].ExternalColumns[desc_turno]"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Output].Columns[desc_turno]"
+                          name="desc_turno"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Output].ExternalColumns[cod_sector]"
+                          dataType="r8"
+                          name="cod_sector" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Output].ExternalColumns[cod_turno]"
+                          dataType="r8"
+                          name="cod_turno" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Output].ExternalColumns[desc_turno]"
+                          dataType="wstr"
+                          length="255"
+                          name="desc_turno" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Error Output]"
+                      isErrorOut="true"
+                      name="Excel Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Error Output].Columns[cod_sector]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Error Output].Columns[cod_sector]"
+                          name="cod_sector" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Error Output].Columns[cod_turno]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Error Output].Columns[cod_turno]"
+                          name="cod_turno" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Error Output].Columns[desc_turno]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Error Output].Columns[desc_turno]"
+                          name="desc_turno" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS.Paths[Data Conversion Output]"
+                  endId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\Data Conversion.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Sequence Container\EXCEL_TO_SA_TURNOS.Paths[Excel Source Output]"
+                  endId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Excel Source Output"
+                  startId="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS.Outputs[Excel Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\TRUNCATE AD"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="TRUNCATE AD"
+          DTS:DTSID="{9062f3ad-8338-408a-bb69-5c40a93dc6c9}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE AD"
+          DTS:ThreadHint="7">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE SA_EXT_EXCEL_AD" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Sequence Container\TRUNCATE AV_5S"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="TRUNCATE AV_5S"
@@ -4913,7 +6588,7 @@ WHERE  (Chave IS NOT NULL)</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="TRUNCATE AV_5S"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4922,14 +6597,30 @@ WHERE  (Chave IS NOT NULL)</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Sequence Container\TRUNCATE LINHAS"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="TRUNCATE LINHAS"
+          DTS:DTSID="{99a06db2-e95d-4bd9-81e6-d0f0a8d42be9}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE LINHAS"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE SA_EXT_EXCEL_LINHAS" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Sequence Container\TRUNCATE OBJETIVOS"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="TRUNCATE MI"
+          DTS:Description="TRUNCATE OBJETIVOS"
           DTS:DTSID="{366fe08c-b87d-4111-b68f-c01baa3af6a3}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="TRUNCATE OBJETIVOS"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4945,7 +6636,7 @@ WHERE  (Chave IS NOT NULL)</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="TRUNCATE OBJ_CUMP"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4961,7 +6652,7 @@ WHERE  (Chave IS NOT NULL)</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="TRUNCATE PROD_CONVERTIDA"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4972,17 +6663,33 @@ WHERE  (Chave IS NOT NULL)</property>
         <DTS:Executable
           DTS:refId="Package\Sequence Container\TRUNCATE SE"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="TRUNCATE MI"
+          DTS:Description="TRUNCATE SE"
           DTS:DTSID="{E86D6EF2-A1F6-4C52-A0C1-32B0133CC960}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="TRUNCATE SE"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="5">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE SA_EXT_EXCEL_SEG_ESCOLHA" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\TRUNCATE TURNOS"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="TRUNCATE TURNOS"
+          DTS:DTSID="{076f6e81-ae0b-45b5-92ac-d8b018cd35a7}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE TURNOS"
+          DTS:ThreadHint="6">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE SA_EXT_EXCEL_TURNO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -5020,6 +6727,22 @@ WHERE  (Chave IS NOT NULL)</property>
           DTS:ObjectName="Restrição"
           DTS:To="Package\Sequence Container\EXCEL_TO_SA_OBJETIVOS" />
         <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Restrição1]"
+          DTS:CreationName=""
+          DTS:DTSID="{8856ED0E-D145-46D6-84DC-D04E98665E10}"
+          DTS:From="Package\Sequence Container\TRUNCATE LINHAS"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição"
+          DTS:To="Package\Sequence Container\EXCEL_TO_SA_LINHAS" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Restrição2]"
+          DTS:CreationName=""
+          DTS:DTSID="{1E73DB94-A5DA-48BA-95B4-731F01DA1872}"
+          DTS:From="Package\Sequence Container\TRUNCATE TURNOS"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição"
+          DTS:To="Package\Sequence Container\EXCEL_TO_SA_TURNOS" />
+        <DTS:PrecedenceConstraint
           DTS:refId="Package\Sequence Container.PrecedenceConstraints[Restrição 1]"
           DTS:CreationName=""
           DTS:DTSID="{233C5538-ED8A-4BD4-93DA-E5EA7512BC41}"
@@ -5027,6 +6750,14 @@ WHERE  (Chave IS NOT NULL)</property>
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restrição 1"
           DTS:To="Package\Sequence Container\EXCEL_TO_SA_PROD_CONVERTIDA" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Restrição 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{BC192B22-5620-4CD5-8A30-36C9865C74BB}"
+          DTS:From="Package\Sequence Container\TRUNCATE AD"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 2"
+          DTS:To="Package\Sequence Container\EXCEL_TO_SA_AD" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
@@ -5224,61 +6955,85 @@ WHERE  (Chave IS NOT NULL)</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="165.6,41.6"
+          Id="Package\Sequence Container\EXCEL_TO_SA_AD"
+          TopLeft="13.3285716572585,263.288235285538" />
         <NodeLayout
           Size="182.4,41.6"
           Id="Package\Sequence Container\EXCEL_TO_SA_AV_5S"
-          TopLeft="493.3,107.1" />
+          TopLeft="5.50000000000004,107.1" />
+        <NodeLayout
+          Size="188,41.6"
+          Id="Package\Sequence Container\EXCEL_TO_SA_LINHAS"
+          TopLeft="248.7,107.1" />
         <NodeLayout
           Size="203.2,41.6"
           Id="Package\Sequence Container\EXCEL_TO_SA_OBJ_CUMP"
-          TopLeft="229.9,107.1" />
+          TopLeft="497.1,107.1" />
         <NodeLayout
           Size="206.4,41.6"
           Id="Package\Sequence Container\EXCEL_TO_SA_OBJETIVOS"
-          TopLeft="5.50000000000006,309.688235285538" />
+          TopLeft="760.5,107.1" />
         <NodeLayout
           Size="248.8,41.6"
           Id="Package\Sequence Container\EXCEL_TO_SA_PROD_CONVERTIDA"
-          TopLeft="439.071435955106,308.86470301242" />
+          TopLeft="1027.3,107.1" />
         <NodeLayout
           Size="164,41.6"
           Id="Package\Sequence Container\EXCEL_TO_SA_SE"
-          TopLeft="5.50000000000006,106.488235285538" />
+          TopLeft="1336.7,107.1" />
+        <NodeLayout
+          Size="192,41.6"
+          Id="Package\Sequence Container\EXCEL_TO_SA_TURNOS"
+          TopLeft="1561.7,107.1" />
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\Sequence Container\TRUNCATE AD"
+          TopLeft="20.4000003746575,186.117650353455" />
         <NodeLayout
           Size="164,41.6"
           Id="Package\Sequence Container\TRUNCATE AV_5S"
-          TopLeft="502.5,5.49999999999984" />
+          TopLeft="14.7,5.50000000000007" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Sequence Container\TRUNCATE LINHAS"
+          TopLeft="257.9,5.49999999999995" />
         <NodeLayout
           Size="185.6,41.6"
           Id="Package\Sequence Container\TRUNCATE OBJ_CUMP"
-          TopLeft="238.7,5.49999999999984" />
+          TopLeft="505.9,5.49999999999995" />
         <NodeLayout
           Size="188,41.6"
           Id="Package\Sequence Container\TRUNCATE OBJETIVOS"
-          TopLeft="14.7000000000001,208.7" />
+          TopLeft="769.7,5.49999999999995" />
         <NodeLayout
           Size="230.4,41.6"
           Id="Package\Sequence Container\TRUNCATE PROD_CONVERTIDA"
-          TopLeft="448.271435955106,207.876467726882" />
+          TopLeft="1036.5,5.49999999999995" />
         <NodeLayout
           Size="145.6,41.6"
           Id="Package\Sequence Container\TRUNCATE SE"
-          TopLeft="14.7000000000001,5.49999999999995" />
+          TopLeft="1345.9,5.49999999999984" />
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\Sequence Container\TRUNCATE TURNOS"
+          TopLeft="1570.5,5.49999999999984" />
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
-          TopLeft="87.5000000000001,47.1">
+          TopLeft="1418.7,47.0999999999998">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.388235285538"
+              EndConnector="0,60.0000000000001"
               Start="0,0"
-              End="0,51.888235285538">
+              End="0,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.888235285538" />
+                    End="0,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5289,18 +7044,18 @@ WHERE  (Chave IS NOT NULL)</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="331.5,47.0999999999998">
+          TopLeft="598.7,47.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,60.0000000000001"
               Start="0,0"
-              End="0,52.5">
+              End="0,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5311,18 +7066,18 @@ WHERE  (Chave IS NOT NULL)</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
-          TopLeft="584.5,47.0999999999998">
+          TopLeft="96.7,47.1000000000001">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,60.0000000000001"
               Start="0,0"
-              End="0,52.5">
+              End="0,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5333,18 +7088,62 @@ WHERE  (Chave IS NOT NULL)</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Restrição]"
-          TopLeft="108.7,250.3">
+          TopLeft="863.7,47.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.388235285538"
+              EndConnector="0,60.0000000000001"
               Start="0,0"
-              End="0,51.888235285538">
+              End="0,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.888235285538" />
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Restrição1]"
+          TopLeft="342.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Restrição2]"
+          TopLeft="1657.7,47.0999999999998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5355,18 +7154,40 @@ WHERE  (Chave IS NOT NULL)</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Restrição 1]"
-          TopLeft="563.471435955106,249.476467726882">
+          TopLeft="1151.7,47.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.3882352855379"
+              EndConnector="0,60.0000000000001"
               Start="0,0"
-              End="0,51.8882352855379">
+              End="0,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.8882352855379" />
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Restrição 2]"
+          TopLeft="95.0642860159585,227.717650353455">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.5705849320831"
+              Start="0,0"
+              End="0,28.0705849320831">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.0705849320831" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5378,10 +7199,10 @@ WHERE  (Chave IS NOT NULL)</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="835.2,1474.4"
-          Size="835.2,1517.6"
+          PanelSize="1759.2,361.6"
+          Size="1759.2,404.8"
           Id="Package\Sequence Container"
-          TopLeft="7.78571432463991,2.44117642768958" />
+          TopLeft="5.5,5.50000000000003" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -5421,6 +7242,91 @@ WHERE  (Chave IS NOT NULL)</property>
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Sequence Container\EXCEL_TO_SA_AD">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination"
+          TopLeft="5.50000000000003,208.7" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS"
+          TopLeft="8.24285675360228,7.33529414338632" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Sequence Container\EXCEL_TO_SA_AD\Data Conversion"
+          TopLeft="13.1,107.1" />
+        <EdgeLayout
+          Id="Package\Sequence Container\EXCEL_TO_SA_AD.Paths[Excel Source Output]"
+          TopLeft="91.8714283768011,48.9352941433863">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.1647058566137"
+              Start="0,0"
+              End="0,50.6647058566137">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.6647058566137" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\EXCEL_TO_SA_AD.Paths[Data Conversion Output]"
+          TopLeft="90.7,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\EXCEL_TO_SA_AD\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\EXCEL_TO_SA_AD\ÁRVORE DEFEITOS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Sequence Container\EXCEL_TO_SA_AV_5S">
     <LayoutInfo>
@@ -5484,6 +7390,95 @@ WHERE  (Chave IS NOT NULL)</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\EXCEL_TO_SA_LINHAS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination"
+          TopLeft="5.50000000000003,208.7" />
+        <NodeLayout
+          Size="114.4,41.6"
+          Id="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS"
+          TopLeft="33.5,5.49999999999995" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Sequence Container\EXCEL_TO_SA_LINHAS\Data Conversion"
+          TopLeft="13.1,107.1" />
+        <EdgeLayout
+          Id="Package\Sequence Container\EXCEL_TO_SA_LINHAS.Paths[Excel Source Output]"
+          TopLeft="90.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\EXCEL_TO_SA_LINHAS.Paths[Data Conversion Output]"
+          TopLeft="90.7,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\EXCEL_TO_SA_LINHAS\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\EXCEL_TO_SA_LINHAS\LINHAS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -5565,21 +7560,21 @@ WHERE  (Chave IS NOT NULL)</property>
         <NodeLayout
           Size="96.8,41.6"
           Id="Package\Sequence Container\EXCEL_TO_SA_OBJETIVOS\OBJ"
-          TopLeft="45.5,5.49999999999995" />
+          TopLeft="42.3,5.49999999999995" />
         <EdgeLayout
           Id="Package\Sequence Container\EXCEL_TO_SA_OBJETIVOS.Paths[Excel Source Output]"
-          TopLeft="92.3,47.1">
+          TopLeft="90.7,47.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="0,52.5">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5626,21 +7621,21 @@ WHERE  (Chave IS NOT NULL)</property>
         <NodeLayout
           Size="96.8,41.6"
           Id="Package\Sequence Container\EXCEL_TO_SA_PROD_CONVERTIDA\OBJ"
-          TopLeft="45.5,5.49999999999995" />
+          TopLeft="42.3,5.49999999999995" />
         <EdgeLayout
           Id="Package\Sequence Container\EXCEL_TO_SA_PROD_CONVERTIDA.Paths[Excel Source Output]"
-          TopLeft="92.3,47.1">
+          TopLeft="90.7,47.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="0,52.5">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5738,6 +7733,95 @@ WHERE  (Chave IS NOT NULL)</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\EXCEL_TO_SA_TURNOS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination"
+          TopLeft="5.50000000000003,208.7" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Sequence Container\EXCEL_TO_SA_TURNOS\Data Conversion"
+          TopLeft="13.1,107.1" />
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS"
+          TopLeft="31.1,5.49999999999995" />
+        <EdgeLayout
+          Id="Package\Sequence Container\EXCEL_TO_SA_TURNOS.Paths[Excel Source Output]"
+          TopLeft="90.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\EXCEL_TO_SA_TURNOS.Paths[Data Conversion Output]"
+          TopLeft="90.7,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\EXCEL_TO_SA_TURNOS\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\EXCEL_TO_SA_TURNOS\TURNOS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

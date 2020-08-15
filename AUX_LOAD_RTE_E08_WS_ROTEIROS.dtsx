@@ -1,0 +1,2057 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/2/2017 8:40:55 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="SRVSQL01"
+  DTS:CreatorName="RTE\administrator"
+  DTS:DTSID="{3F484706-4E4C-4EAC-BF7A-91BB00AF6DCC}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="14.0.3002.68"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="AUX_LOAD_RTE_E08_WS_ROTEIROS"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="179"
+  DTS:VersionGUID="{C0FD1783-ED2D-4D05-981E-C5FC66370FCD}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SRVSQL01]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0310C3C5-623D-4103-9DE0-8FB56B37328A}"
+      DTS:ObjectName="SRVSQL01">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=172.18.100.28;User ID=miguel.teixeira;Initial Catalog=RTE_BI_SA;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="uL3Qqx3Hfg=="
+            IV="aX4SlkHvIpE=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
+            <CipherData>
+              <CipherValue>aX4SlkHvIpFuuDIk+syaoYY/xAuRkMXnirGwu41CX9kGrbULAzmgyWEhHnXIwhSkErL3LDZOeH53wYQU02BrrzrWE9X5G8Mg3lJ6zY6+8Y9ZUo6AQUxAwi9eCqExei9fodarcf7fNU5uHrMgy5MzkEWFhBKEOb/zYghJLNCi3oNviqa4a6Q8rw==</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[WS CONN Roteiros]"
+      DTS:CreationName="HTTP"
+      DTS:DTSID="{7CB63A58-4E2F-40B5-9D40-4A209B1E61DF}"
+      DTS:ObjectName="WS CONN Roteiros">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="http://localhost:8080/ServiceRTE.asmx">
+          <DTS:HttpConnection
+            DTS:ServerURL="http://localhost:8080/ServiceRTE.asmx">
+            <EncryptedData
+              Type="http://www.w3.org/2001/04/xmlenc#Element"
+              Salt="fdt/V4sYqg=="
+              IV="AvYMn85cI2k=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+              <EncryptionMethod
+                Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
+              <CipherData>
+                <CipherValue>AvYMn85cI2lmRtSfA9y5eNFrCXokhtOz9xq+mSOP2T/DZfdtb4oDsFhvrdyL+FbeJXIABeR8W7WzIy3oTXgCj+5siVz0SHx0ctD24XYrDur6cWzKncwAvaCHblO897XhNlutMCU2OMADQrjUInwvmwIzaxdp5Wkk8X5nyRa3lZw=</CipherValue>
+              </CipherData>
+            </EncryptedData>
+            <EncryptedData
+              Type="http://www.w3.org/2001/04/xmlenc#Element"
+              Salt="QFLIhGZkbg=="
+              IV="ClkmlDmgVqY=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+              <EncryptionMethod
+                Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
+              <CipherData>
+                <CipherValue>ClkmlDmgVqYUxCynGkOQNq8qxJTDH9zXFn3FsGRDDIXk65ULxGUxoMHkbXQdfI1FrcLXQElrm4gMXtXm4UvNraGXejcs5pvosRMrGKtC6IRoxLSfZPddaibr31vtPiAG5zbfm3MFDpRw99CZ+sVx985vmO6qzNbjEPc8tx36QtI=</CipherValue>
+              </CipherData>
+            </EncryptedData>
+          </DTS:HttpConnection>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[WSBI_Roteiros.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{176D8589-3575-4F55-96E6-964F6FB9CE70}"
+      DTS:ObjectName="WSBI_Roteiros.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\Miguel\B2F\RTE - General\03 - Implementação\0304 - Desenvolvimento\030402 - SSIS\WS_LOAD\WSBI_Roteiros.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{92066440-9B5D-46D0-AA31-DB9896BEFDE9}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="P_DATA_ATUAL">
+      <DTS:VariableValue
+        DTS:DataType="8">2019-01-14</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1749375A-F906-47AB-A72E-D301DB2726C6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="P_OBJETO">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{812D0011-A668-4B66-8253-FCF835D55654}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="P_PARAMETRO1">
+      <DTS:VariableValue
+        DTS:DataType="8">ROTEIROS</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A891F262-F50C-4F23-8AB0-220434A03465}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;IvDatmodIni=2015-01-01;IvDatmodFin=2019-12-31;IvRefer=2752988&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="P_PARAMETRO2">
+      <DTS:VariableValue
+        DTS:DataType="8">IvDatmodIni=2015-01-01;IvDatmodFin=2019-12-31;IvRefer=2752988</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AE378128-64B6-41A5-B942-5837A582FA52}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="P_PARAMETRO_DAILY_EXEC">
+      <DTS:VariableValue
+        DTS:DataType="8">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{754432BB-220C-4FC9-BC7E-AA5505D2316C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="P_PARAMETRO_KEY">
+      <DTS:VariableValue
+        DTS:DataType="8">ROTEIROS</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Contêiner da Sequência"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contêiner da Sequência"
+      DTS:DTSID="{9CD81B94-0737-45ED-BE31-F1674A04679E}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Contêiner da Sequência">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Contêiner da Sequência\Data Flow Task"
+          DTS:CreationName="SSIS.Pipeline.3"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{B48DA99F-D3CD-4030-85D0-2C4ECD709FD8}"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion"
+                  componentClassID="DTSTransform.DataConvert.3"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Matnr]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Matnr"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Matnr]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Meins]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Meins"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Meins]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Maktx]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Maktx"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Maktx]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Plnnr]"
+                          cachedDataType="ui4"
+                          cachedName="Plnnr"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Plnnr]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Plnal]"
+                          cachedDataType="ui1"
+                          cachedName="Plnal"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Plnal]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Aedat]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Aedat"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Aedat]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Vornr]"
+                          cachedDataType="ui1"
+                          cachedName="Vornr"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Vornr]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Verid]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Verid"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Verid]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Bmsch]"
+                          cachedDataType="decimal"
+                          cachedName="Bmsch"
+                          cachedScale="10"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Bmsch]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Ltxa1]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Ltxa1"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Ltxa1]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Vgw01]"
+                          cachedDataType="decimal"
+                          cachedName="Vgw01"
+                          cachedScale="10"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Vgw01]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Vge01]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Vge01"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Vge01]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Vgw02]"
+                          cachedDataType="decimal"
+                          cachedName="Vgw02"
+                          cachedScale="10"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Vgw02]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Vge02]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Vge02"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Vge02]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[EtRoteiros_Id]"
+                          cachedDataType="ui8"
+                          cachedName="EtRoteiros_Id"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[EtRoteiros_Id]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Key]"
+                          cachedDataType="wstr"
+                          cachedLength="500"
+                          cachedName="Key"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Key]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Parametros_WS]"
+                          cachedDataType="wstr"
+                          cachedLength="500"
+                          cachedName="Parametros_WS"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Parametros_WS]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[DailyExec]"
+                          cachedDataType="i4"
+                          cachedName="DailyExec"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[DailyExec]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Matnr]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="500"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Matnr]"
+                          name="Cópia de Matnr"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Matnr]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Meins]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="500"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Meins]"
+                          name="Cópia de Meins"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Meins]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Maktx]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="500"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Maktx]"
+                          name="Cópia de Maktx"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Maktx]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Plnnr]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Plnnr]"
+                          name="Cópia de Plnnr"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Plnnr]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Plnal]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Plnal]"
+                          name="Cópia de Plnal"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Plnal]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Aedat]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Aedat]"
+                          name="Cópia de Aedat"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Aedat]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Vornr]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Vornr]"
+                          name="Cópia de Vornr"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Vornr]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Verid]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="500"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Verid]"
+                          name="Cópia de Verid"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Verid]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Bmsch]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Bmsch]"
+                          name="Cópia de Bmsch"
+                          precision="18"
+                          scale="10"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Bmsch]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Ltxa1]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="500"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Ltxa1]"
+                          name="Cópia de Ltxa1"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Ltxa1]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Vgw01]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Vgw01]"
+                          name="Cópia de Vgw01"
+                          precision="18"
+                          scale="10"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Vgw01]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Vge01]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="500"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Vge01]"
+                          name="Cópia de Vge01"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Vge01]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Vgw02]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Vgw02]"
+                          name="Cópia de Vgw02"
+                          precision="18"
+                          scale="10"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Vgw02]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Vge02]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="500"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Vge02]"
+                          name="Cópia de Vge02"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Vge02]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de EtRoteiros_Id]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de EtRoteiros_Id]"
+                          name="Cópia de EtRoteiros_Id"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[EtRoteiros_Id]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Key]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="500"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Key]"
+                          name="Cópia de Key"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Key]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Parametros_WS]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="500"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Parametros_WS]"
+                          name="Cópia de Parametros_WS"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Parametros_WS]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de DailyExec]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de DailyExec]"
+                          name="Cópia de DailyExec"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[DailyExec]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contêiner da Sequência\Data Flow Task\Derived Column"
+                  componentClassID="DTSTransform.DerivedColumn.3"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Contêiner da Sequência\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Contêiner da Sequência\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Key]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="500"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Key]"
+                          name="Key"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::P_PARAMETRO_KEY]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::P_PARAMETRO_KEY]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Parametros_WS]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="500"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Parametros_WS]"
+                          name="Parametros_WS"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::P_PARAMETRO2]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::P_PARAMETRO2]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[DailyExec]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[DailyExec]"
+                          name="DailyExec"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::P_PARAMETRO_DAILY_EXEC]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::P_PARAMETRO_DAILY_EXEC]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Contêiner da Sequência\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination"
+                  componentClassID="DTSAdapter.OLEDBDestination.3"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[SA_EXT_WS_ROTEIROS]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{0BA6BB9C-6062-4B09-9F0E-79FA47291F78}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[RTE_BI_SA]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Matnr]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="500"
+                          cachedName="Cópia de Matnr"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Matnr]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Matnr]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Maktx]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="500"
+                          cachedName="Cópia de Maktx"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Maktx]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Maktx]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Parametros_WS]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="500"
+                          cachedName="Cópia de Parametros_WS"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametros_WS]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Parametros_WS]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Key]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="500"
+                          cachedName="Cópia de Key"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Key]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Key]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Meins]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="500"
+                          cachedName="Cópia de Meins"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Meins]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Meins]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Plnnr]"
+                          cachedDataType="numeric"
+                          cachedName="Cópia de Plnnr"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Plnnr]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Plnnr]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Plnal]"
+                          cachedDataType="numeric"
+                          cachedName="Cópia de Plnal"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Plnal]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Plnal]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Aedat]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Cópia de Aedat"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Aedat]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Aedat]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Vornr]"
+                          cachedDataType="numeric"
+                          cachedName="Cópia de Vornr"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vornr]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Vornr]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Verid]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="500"
+                          cachedName="Cópia de Verid"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Verid]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Verid]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Bmsch]"
+                          cachedDataType="numeric"
+                          cachedName="Cópia de Bmsch"
+                          cachedPrecision="18"
+                          cachedScale="10"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bmsch]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Bmsch]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Ltxa1]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="500"
+                          cachedName="Cópia de Ltxa1"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ltxa1]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Ltxa1]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Vgw01]"
+                          cachedDataType="numeric"
+                          cachedName="Cópia de Vgw01"
+                          cachedPrecision="18"
+                          cachedScale="10"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vgw01]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Vgw01]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Vge01]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="500"
+                          cachedName="Cópia de Vge01"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vge01]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Vge01]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Vgw02]"
+                          cachedDataType="numeric"
+                          cachedName="Cópia de Vgw02"
+                          cachedPrecision="18"
+                          cachedScale="10"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vgw02]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Vgw02]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Vge02]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="500"
+                          cachedName="Cópia de Vge02"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vge02]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Vge02]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Matnr]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Matnr" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Maktx]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Maktx" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Key]"
+                          codePage="1252"
+                          dataType="str"
+                          length="500"
+                          name="Key" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametros_WS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="500"
+                          name="Parametros_WS" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Meins]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Meins" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Plnnr]"
+                          dataType="numeric"
+                          name="Plnnr"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Plnal]"
+                          dataType="numeric"
+                          name="Plnal"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Aedat]"
+                          dataType="dbTimeStamp"
+                          name="Aedat" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vornr]"
+                          dataType="numeric"
+                          name="Vornr"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Verid]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Verid" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bmsch]"
+                          dataType="numeric"
+                          name="Bmsch"
+                          precision="18"
+                          scale="10" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ltxa1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Ltxa1" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vgw01]"
+                          dataType="numeric"
+                          name="Vgw01"
+                          precision="18"
+                          scale="10" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vge01]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Vge01" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vgw02]"
+                          dataType="numeric"
+                          name="Vgw02"
+                          precision="18"
+                          scale="10" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vge02]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Vge02" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contêiner da Sequência\Data Flow Task\XML Source"
+                  componentClassID="DTS.ManagedComponentWrapper.3"
+                  contactInfo="Extracts data from an XML file. For example, extract catalog data from an XML file that represents catalogs and catalog items. Before using, specify the schema and generate an output for each XML element.;Microsoft Corporation;Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Extracts data from an XML file. For example, extract catalog data from an XML file that represents catalogs and catalog items. Before using, specify the schema and generate an output for each XML element."
+                  name="XML Source"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter, Microsoft.SqlServer.XmlSrc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+                    <property
+                      dataType="System.String"
+                      description="The XML data used by the XML source adapter."
+                      expressionType="Notify"
+                      name="XMLData">C:\Users\Miguel\B2F\RTE - General\03 - Implementação\0304 - Desenvolvimento\030402 - SSIS\WS_LOAD\WSBI_Roteiros.xml</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable used by the XML source adapter to specify XML data."
+                      name="XMLDataVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Defines how the XML source adapter gets XML data."
+                      name="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The XML schema definition used by the XML source adapter."
+                      expressionType="Notify"
+                      name="XMLSchemaDefinition">C:\Users\Miguel\B2F\RTE - General\03 - Implementação\0304 - Desenvolvimento\030402 - SSIS\WS_LOAD\WebServiceBIRoteiros.xds.xsd</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Identifies whether or not to use inline schema."
+                      name="UseInlineSchema">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Defines how XML integer types are mapped."
+                      name="XMLIntegerMapping"
+                      typeConverter="Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter+XMLIntegerMappingConverter, Microsoft.SqlServer.XmlSrc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">0</property>
+                  </properties>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item]"
+                      name="item">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Identifies the rowset associated with the output."
+                          name="RowsetID">item</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Matnr]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Matnr]"
+                          length="255"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Matnr]"
+                          name="Matnr"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Meins]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Meins]"
+                          length="255"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Meins]"
+                          name="Meins"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Maktx]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Maktx]"
+                          length="255"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Maktx]"
+                          name="Maktx"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Plnnr]"
+                          dataType="ui4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Plnnr]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Plnnr]"
+                          name="Plnnr"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Plnal]"
+                          dataType="ui1"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Plnal]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Plnal]"
+                          name="Plnal"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Aedat]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Aedat]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Aedat]"
+                          name="Aedat"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Vornr]"
+                          dataType="ui1"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Vornr]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Vornr]"
+                          name="Vornr"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Verid]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Verid]"
+                          length="255"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Verid]"
+                          name="Verid"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Bmsch]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Bmsch]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Bmsch]"
+                          name="Bmsch"
+                          scale="10"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Ltxa1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Ltxa1]"
+                          length="255"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Ltxa1]"
+                          name="Ltxa1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Vgw01]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Vgw01]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Vgw01]"
+                          name="Vgw01"
+                          scale="10"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Vge01]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Vge01]"
+                          length="255"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Vge01]"
+                          name="Vge01"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Vgw02]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Vgw02]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Vgw02]"
+                          name="Vgw02"
+                          scale="10"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Vge02]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Vge02]"
+                          length="255"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[Vge02]"
+                          name="Vge02"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[EtRoteiros_Id]"
+                          dataType="ui8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[EtRoteiros_Id]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[EtRoteiros_Id]"
+                          name="EtRoteiros_Id"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Matnr]"
+                          dataType="wstr"
+                          length="255"
+                          name="Matnr">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Meins]"
+                          dataType="wstr"
+                          length="255"
+                          name="Meins">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Maktx]"
+                          dataType="wstr"
+                          length="255"
+                          name="Maktx">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Plnnr]"
+                          dataType="ui4"
+                          name="Plnnr">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.UInt32</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Plnal]"
+                          dataType="ui1"
+                          name="Plnal">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.Byte</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Aedat]"
+                          dataType="dbTimeStamp"
+                          name="Aedat">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.DateTime</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Vornr]"
+                          dataType="ui1"
+                          name="Vornr">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.Byte</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Verid]"
+                          dataType="wstr"
+                          length="255"
+                          name="Verid">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Bmsch]"
+                          dataType="decimal"
+                          name="Bmsch"
+                          scale="10">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.Decimal</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Ltxa1]"
+                          dataType="wstr"
+                          length="255"
+                          name="Ltxa1">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Vgw01]"
+                          dataType="decimal"
+                          name="Vgw01"
+                          scale="10">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.Decimal</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Vge01]"
+                          dataType="wstr"
+                          length="255"
+                          name="Vge01">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Vgw02]"
+                          dataType="decimal"
+                          name="Vgw02"
+                          scale="10">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.Decimal</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[Vge02]"
+                          dataType="wstr"
+                          length="255"
+                          name="Vge02">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[EtRoteiros_Id]"
+                          dataType="ui8"
+                          name="EtRoteiros_Id">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.UInt64</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output]"
+                      isErrorOut="true"
+                      name="item Error Output">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Identifies the rowset associated with the output."
+                          name="RowsetID">item</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Matnr]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Matnr]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Matnr]"
+                          name="Matnr" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Meins]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Meins]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Meins]"
+                          name="Meins" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Maktx]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Maktx]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Maktx]"
+                          name="Maktx" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Plnnr]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Plnnr]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Plnnr]"
+                          name="Plnnr" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Plnal]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Plnal]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Plnal]"
+                          name="Plnal" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Aedat]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Aedat]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Aedat]"
+                          name="Aedat" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Vornr]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Vornr]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Vornr]"
+                          name="Vornr" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Verid]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Verid]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Verid]"
+                          name="Verid" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Bmsch]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Bmsch]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Bmsch]"
+                          name="Bmsch" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Ltxa1]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Ltxa1]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Ltxa1]"
+                          name="Ltxa1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Vgw01]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Vgw01]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Vgw01]"
+                          name="Vgw01" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Vge01]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Vge01]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Vge01]"
+                          name="Vge01" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Vgw02]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Vgw02]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Vgw02]"
+                          name="Vgw02" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Vge02]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Vge02]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[Vge02]"
+                          name="Vge02" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[EtRoteiros_Id]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[EtRoteiros_Id]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[EtRoteiros_Id]"
+                          name="EtRoteiros_Id" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Matnr]"
+                          dataType="nText"
+                          name="Matnr" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Meins]"
+                          dataType="nText"
+                          name="Meins" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Maktx]"
+                          dataType="nText"
+                          name="Maktx" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Plnnr]"
+                          dataType="nText"
+                          name="Plnnr" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Plnal]"
+                          dataType="nText"
+                          name="Plnal" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Aedat]"
+                          dataType="nText"
+                          name="Aedat" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Vornr]"
+                          dataType="nText"
+                          name="Vornr" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Verid]"
+                          dataType="nText"
+                          name="Verid" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Bmsch]"
+                          dataType="nText"
+                          name="Bmsch" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Ltxa1]"
+                          dataType="nText"
+                          name="Ltxa1" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Vgw01]"
+                          dataType="nText"
+                          name="Vgw01" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Vge01]"
+                          dataType="nText"
+                          name="Vge01" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Vgw02]"
+                          dataType="nText"
+                          name="Vgw02" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[Vge02]"
+                          dataType="nText"
+                          name="Vge02" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[EtRoteiros_Id]"
+                          dataType="nText"
+                          name="EtRoteiros_Id" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtRoteiros]"
+                      name="EtRoteiros">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Identifies the rowset associated with the output."
+                          name="RowsetID">EtRoteiros</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtRoteiros].Columns[EtRoteiros_Id]"
+                          dataType="ui8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtRoteiros].ExternalColumns[EtRoteiros_Id]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtRoteiros].Columns[EtRoteiros_Id]"
+                          name="EtRoteiros_Id"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtRoteiros].ExternalColumns[EtRoteiros_Id]"
+                          dataType="ui8"
+                          name="EtRoteiros_Id">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.UInt64</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtRoteiros Error Output]"
+                      isErrorOut="true"
+                      name="EtRoteiros Error Output">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Identifies the rowset associated with the output."
+                          name="RowsetID">EtRoteiros</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtRoteiros Error Output].Columns[EtRoteiros_Id]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtRoteiros Error Output].ExternalColumns[EtRoteiros_Id]"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtRoteiros Error Output].Columns[EtRoteiros_Id]"
+                          name="EtRoteiros_Id" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtRoteiros Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtRoteiros Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtRoteiros Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtRoteiros Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtRoteiros Error Output].ExternalColumns[EtRoteiros_Id]"
+                          dataType="nText"
+                          name="EtRoteiros_Id" />
+                      </externalMetadataColumns>
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Contêiner da Sequência\Data Flow Task.Paths[Data Conversion Output]"
+                  endId="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Contêiner da Sequência\Data Flow Task.Paths[Derived Column Output]"
+                  endId="Package\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Derived Column Output"
+                  startId="Package\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Contêiner da Sequência\Data Flow Task.Paths[item]"
+                  endId="Package\Contêiner da Sequência\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  name="item"
+                  startId="Package\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contêiner da Sequência\Web Service Task"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.WebServiceTask.WebServiceTask, Microsoft.SqlServer.WebServiceTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Web Service Task"
+          DTS:DTSID="{E61253BA-8236-4ECA-89C5-ED25349921B2}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.WebServiceTask.WebServiceTask, Microsoft.SqlServer.WebServiceTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Web Service Task"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <WSTask:WebServiceTaskData
+              WSTask:ConnectionName="{7CB63A58-4E2F-40B5-9D40-4A209B1E61DF}"
+              WSTask:Service="ServiceRTE"
+              WSTask:WSDLFile="C:\Users\Miguel\B2F\RTE - General\03 - Implementação\0304 - Desenvolvimento\030402 - SSIS\TESTES\WebServiceBI.wsdl"
+              WSTask:OutputLocation="WSBI_Roteiros.xml" xmlns:WSTask="www.microsoft.com/sqlserver/dts/tasks/webservicetask">
+              <WSTask:MethodInfo
+                WSTask:MethodName="GetData"
+                WSTask:MessageName="">
+                <WSTask:Documentation></WSTask:Documentation>
+                <WSTask:ParamInfo
+                  WSTask:Name="ServiceName"
+                  WSTask:Datatype="string"
+                  WSTask:ParamType="Variable"
+                  WSTask:SeqNumber="0">
+                  <WSTask:VariableValue>User::P_PARAMETRO1</WSTask:VariableValue>
+                </WSTask:ParamInfo>
+                <WSTask:ParamInfo
+                  WSTask:Name="ServiceParameters"
+                  WSTask:Datatype="string"
+                  WSTask:ParamType="Variable"
+                  WSTask:SeqNumber="1">
+                  <WSTask:VariableValue>User::P_PARAMETRO2</WSTask:VariableValue>
+                </WSTask:ParamInfo>
+              </WSTask:MethodInfo>
+            </WSTask:WebServiceTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contêiner da Sequência.PrecedenceConstraints[Restrição]"
+          DTS:CreationName=""
+          DTS:DTSID="{17C0D964-6133-44D6-A31A-135291F49654}"
+          DTS:From="Package\Contêiner da Sequência\Web Service Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição"
+          DTS:To="Package\Contêiner da Sequência\Data Flow Task" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Elimina tabela Roteiros"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Elimina tabela Roteiros"
+      DTS:Disabled="True"
+      DTS:DTSID="{1433CE0F-6607-4C32-B7FA-A0812153D079}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Elimina tabela Roteiros"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0310C3C5-623D-4103-9DE0-8FB56B37328A}"
+          SQLTask:SqlStatementSource="truncate table SA_EXT_WS_ROTEIROS" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição]"
+      DTS:CreationName=""
+      DTS:DTSID="{F0D02DFB-DAD9-489D-8D08-C0E9829FAEFC}"
+      DTS:From="Package\Elimina tabela Roteiros"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição"
+      DTS:To="Package\Contêiner da Sequência" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="sql11">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="186.4,41.6"
+          Id="Package\Elimina tabela Roteiros"
+          TopLeft="125.540816701883,5.49999999999995" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Contêiner da Sequência\Data Flow Task"
+          TopLeft="11.1,107.1" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Contêiner da Sequência\Web Service Task"
+          TopLeft="5.50000000000001,5.49999999999995" />
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência.PrecedenceConstraints[Restrição]"
+          TopLeft="86.3,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="172.8,204"
+          Size="213.6,247.2"
+          Id="Package\Contêiner da Sequência"
+          TopLeft="118.336731966314,146.817644081643" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="221.938774334098,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,99.7176440816433"
+              Start="0,0"
+              End="0,92.2176440816433">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,92.2176440816433" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Contêiner da Sequência\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="133.6,41.6"
+          Id="Package\Contêiner da Sequência\Data Flow Task\XML Source"
+          TopLeft="23.9,5.49999999999995" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination"
+          TopLeft="5.50000000000003,310.3" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Contêiner da Sequência\Data Flow Task\Derived Column"
+          TopLeft="14.3,107.1" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Contêiner da Sequência\Data Flow Task\Data Conversion"
+          TopLeft="13.1,208.7" />
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="90.7,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência\Data Flow Task.Paths[item]"
+          TopLeft="90.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-10.02166015625,21.52685546875,20.0433203125,9.4462890625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="90.7,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contêiner da Sequência\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

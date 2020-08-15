@@ -9,12 +9,12 @@
     DTS:Name="ServerName">@[$Project::SA_SERVER_NAME]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=172.18.100.28;User ID=ines.costa;Initial Catalog=RTE_BI_SA;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      DTS:ConnectionString="Data Source=172.18.100.28;User ID=miguel.teixeira;Initial Catalog=RTE_BI_SA;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
         Sensitive="1"
-        p4:Salt="sJsoJfhnSA=="
-        p4:IV="BDUg/mQqLWw=" xmlns:p4="www.microsoft.com/SqlServer/SSIS">2YB38HB0ENAHBb7W2cSoVjpyfWjQC8slt7n/aT6gekdGbF7QTqzAKLdezUInmE4q2RfH47E4YW15wN2yURMdQE07Yc4M4PBG+kyNRjZsQPy/mlx5S3VDze/xaO1DG575gbxHdvZNW4Xyl8t6Y+X9SGjg7m8/4Ld+/BbNpK5VP+8=</DTS:Password>
+        p4:Salt="dqnZ7wRh8w=="
+        p4:IV="KbtULkQfqLI=" xmlns:p4="www.microsoft.com/SqlServer/SSIS">u70YG2h+d+1k4DQ5F8LfFV3v3odhz3TesD/fX694Kt5Kq8ULmNJpaQIzWk3EkShaFdcOnCncTScHdhYJF32M36EpJDk7PfQhvCEipoETRU7KPVkUFHpu1IKAIgWWlFD8xdraXIgj/6NfG660G8aXNxFpWATSb4QKEo5Zh5lygO0=</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

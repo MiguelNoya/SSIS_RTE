@@ -1,0 +1,1505 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/2/2017 8:40:55 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="SRVSQL01"
+  DTS:CreatorName="RTE\administrator"
+  DTS:DTSID="{0A997E15-4FD9-41E6-8180-BC6F37A5ED30}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.7469.6"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="RTE_E09_WS_HORAS"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="150"
+  DTS:VersionGUID="{3EDADF5F-8F61-43D2-83DE-85BD212C8728}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[WS CONN Horas]"
+      DTS:CreationName="HTTP"
+      DTS:DTSID="{B493B514-B2B5-4510-92F7-46205CBBA1FA}"
+      DTS:ObjectName="WS CONN Horas">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="http://172.18.100.27:8081/ServiceRTE.asmx">
+          <DTS:HttpConnection
+            DTS:ServerURL="http://172.18.100.27:8081/ServiceRTE.asmx">
+            <EncryptedData
+              Type="http://www.w3.org/2001/04/xmlenc#Element"
+              Salt="YqH6W/xOsg=="
+              IV="SI4kq4+blos=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+              <EncryptionMethod
+                Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
+              <CipherData>
+                <CipherValue>SI4kq4+blovcRfF0qhT99UlwRmuYIm/QAzv3dU/X21hq5uT2ZdUOS/ghDx2Q1VANpDgI5ovDaTtB/QhET+P/ywlLfRYRw1eiGtf0qxGilC1PloFhfxY4SrTevU/+ZKPeIBkGg+Bg1e9BeyE+780i++hBcLdHeAlC08YLU0XzWk8=</CipherValue>
+              </CipherData>
+            </EncryptedData>
+            <EncryptedData
+              Type="http://www.w3.org/2001/04/xmlenc#Element"
+              Salt="Oq2DW+dJHg=="
+              IV="73SozJ6ALjI=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+              <EncryptionMethod
+                Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
+              <CipherData>
+                <CipherValue>73SozJ6ALjKOFyDqoLVIUA3ySIg8fJWvnaNXYwwe0Z3GZeaSDLaymokQoqrEsuWqkdosO5ReRQw7C1LZlGKf2PUD5GUc+kPM3M6zni5gBA5GhzFifcV7bu0cjXV80pmIO6xXr/wvAMdKsXQHeZNnj8F7HPyoMEqi48/6oJK7Y4Q=</CipherValue>
+              </CipherData>
+            </EncryptedData>
+          </DTS:HttpConnection>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[WSBI_Horas.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{0B4AC5FA-1440-4476-ABBD-D26E300E3258}"
+      DTS:ObjectName="WSBI_Horas.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\SSIS\JOBS\B2F\WS_LOAD\WSBI_Horas.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ADE2472F-3782-43FB-8309-69011A120115}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="P_DATA_ATUAL">
+      <DTS:VariableValue
+        DTS:DataType="8">2019-01-14</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3E545C3B-B158-451B-941D-C9E3E9C7AB69}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="P_OBJETO">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2BAE1C38-9C15-491B-BE3B-415ED42A7091}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="P_PARAMETRO1">
+      <DTS:VariableValue
+        DTS:DataType="8">20</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{34B2BF8C-7288-48DC-A5A9-758B8DFD6342}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="P_PARAMETRO2">
+      <DTS:VariableValue
+        DTS:DataType="8">LAKAJSKEdfWEFKEFLGLWEGWTGKLWRTKGWRTGHLWRTLHGRLHKERHKERTHGLERKHKERTHLERHKERKHERKTH</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{709FC308-A998-491C-B907-B353ECA2A048}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="P_PARAMETRO_DAILY_EXEC">
+      <DTS:VariableValue
+        DTS:DataType="8">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{34F69277-A481-4ACC-9F67-F8BCA3DE9ADF}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="P_PARAMETRO_KEY">
+      <DTS:VariableValue
+        DTS:DataType="8">LAKAJSKEdfWEFKEFLGLWEGWTGKLWRTKGWRTGHLWRTLHGRLHKERHKERTHGLERKHKERTHLERHKERKHERKTH</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Elimina tabela Horas"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Elimina tabela Horas"
+      DTS:DTSID="{F02E5382-1DC2-4733-86C0-CF3B8380BB2C}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Elimina tabela Horas"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}"
+          SQLTask:SqlStatementSource="truncate table SA_EXT_WS_HORAS" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get Param"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Get Param"
+      DTS:DTSID="{8c8c0abf-58d4-4fd5-96f1-cd431d89e0ec}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get Param"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}"
+          SQLTask:SqlStatementSource="select &#xA;ma.WS_NAME parameter1, ec.ws_parameter1_cod+'='+ec.ws_parameter1_val+';' +ec.ws_parameter2_cod+'='+ec.ws_parameter2_val+';'+ec.ws_parameter3_cod+'='+ec.ws_parameter3_val  parameter2, &#xA;WS_KEY parameter_key,&#xA;cast(WS_DAILY_EXEC as varchar(3)) WS_DAILY_EXEC&#xA; from rte_bi_app.[dbo].[WS_EXECUTION_CONTROL] ec &#xA; join rte_bi_app.[dbo].[WS_CONFIG_MASTER] ma on ma.WS_ID=ec.WS_ID&#xA;where ma.ws_id=3 and ec.ws_execution_flag='N'&#xA;order by WS_KEY"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::P_OBJETO" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Loop de parâmetros"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Contêiner do Loop Foreach"
+      DTS:DTSID="{90babaf4-5057-4e8d-96e9-0b9867da24b5}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:MaxErrorCount="1000"
+      DTS:ObjectName="Loop de parâmetros">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.SqlServer.Dts.Runtime.Enumerators.ADO.ForEachADOEnumerator, Microsoft.SqlServer.ForEachADOEnumerator, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+        DTS:DTSID="{796B5A6C-F88F-43D6-A478-8573C6A3A485}"
+        DTS:ObjectName="{796B5A6C-F88F-43D6-A478-8573C6A3A485}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateAllRows"
+            VarName="User::P_OBJETO" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Loop de parâmetros\Atualiza Erro"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Atualiza"
+          DTS:DTSID="{55e2c9f6-b21d-4180-ba90-d6c7d8addf9d}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza Erro"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"update wec
+set ws_execution_flag='E' 
+from rte_bi_app.[dbo].[WS_EXECUTION_CONTROL] wec
+where ws_key='" + @[User::P_PARAMETRO_KEY] +"' and ws_id=3 and ws_daily_exec="+ @[User::P_PARAMETRO_DAILY_EXEC]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}"
+              SQLTask:SqlStatementSource="update wec&#xA;set ws_execution_flag='E' &#xA;from rte_bi_app.[dbo].[WS_EXECUTION_CONTROL] wec&#xA;where ws_key='LAKAJSKEdfWEFKEFLGLWEGWTGKLWRTKGWRTGHLWRTLHGRLHKERHKERTHGLERKHKERTHLERHKERKHERKTH' and ws_id=3 and ws_daily_exec=1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Loop de parâmetros\Atualiza Inicio"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Atualiza"
+          DTS:DTSID="{4f6ac537-f581-4cf5-a753-1767fceddc9e}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza Inicio"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"update wec
+set ws_execution_flag='I' 
+from rte_bi_app.[dbo].[WS_EXECUTION_CONTROL] wec
+where ws_key='" + @[User::P_PARAMETRO_KEY] +"' and ws_id=3 and ws_daily_exec="+ @[User::P_PARAMETRO_DAILY_EXEC]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}"
+              SQLTask:SqlStatementSource="update wec&#xA;set ws_execution_flag='I' &#xA;from rte_bi_app.[dbo].[WS_EXECUTION_CONTROL] wec&#xA;where ws_key='LAKAJSKEdfWEFKEFLGLWEGWTGKLWRTKGWRTGHLWRTLHGRLHKERHKERTHGLERKHKERTHLERHKERKHERKTH' and ws_id=3 and ws_daily_exec=1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Loop de parâmetros\Atualiza Sucesso"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Atualiza"
+          DTS:DTSID="{178ee2b9-9a40-4817-ac17-66ad7c421e2c}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza Sucesso"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"update wec
+set ws_execution_flag='S' 
+from rte_bi_app.[dbo].[WS_EXECUTION_CONTROL] wec
+where ws_key='" + @[User::P_PARAMETRO_KEY] +"' and ws_id=3 and ws_daily_exec="+ @[User::P_PARAMETRO_DAILY_EXEC]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}"
+              SQLTask:SqlStatementSource="update wec&#xA;set ws_execution_flag='S' &#xA;from rte_bi_app.[dbo].[WS_EXECUTION_CONTROL] wec&#xA;where ws_key='LAKAJSKEdfWEFKEFLGLWEGWTGKLWRTKGWRTGHLWRTLHGRLHKERHKERTHGLERKHKERTHLERHKERKHERKTH' and ws_id=3 and ws_daily_exec=1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Loop de parâmetros\Contêiner da Sequência"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Contêiner da Sequência"
+          DTS:DTSID="{2D76CC15-C11B-4EC0-9875-B59FD2402187}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Contêiner da Sequência">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task"
+              DTS:CreationName="SSIS.Pipeline.3"
+              DTS:Description="Data Flow Task"
+              DTS:DTSID="{ca9d01f4-45da-4418-8dbe-06fbcab0f701}"
+              DTS:ExecutableType="SSIS.Pipeline.3"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Data Flow Task"
+              DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <pipeline
+                  version="1">
+                  <components>
+                    <component
+                      refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion"
+                      componentClassID="{62B1106C-7DB8-4EC8-ADD6-4C664DFFC54A}"
+                      contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                      description="Data Conversion"
+                      name="Data Conversion"
+                      usesDispositions="true">
+                      <inputs>
+                        <input
+                          refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+                          name="Data Conversion Input">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[TimeTy]"
+                              cachedDataType="ui2"
+                              cachedName="TimeTy"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[TimeTy]" />
+                            <inputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[TimeTyDesc]"
+                              cachedDataType="wstr"
+                              cachedLength="255"
+                              cachedName="TimeTyDesc"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[TimeTyDesc]" />
+                            <inputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[TotalHour]"
+                              cachedDataType="decimal"
+                              cachedName="TotalHour"
+                              cachedScale="10"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[TotalHour]" />
+                            <inputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Key]"
+                              cachedDataType="wstr"
+                              cachedLength="500"
+                              cachedName="Key"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Key]" />
+                            <inputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Parametros_WS]"
+                              cachedDataType="wstr"
+                              cachedLength="500"
+                              cachedName="Parametros_WS"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Parametros_WS]" />
+                          </inputColumns>
+                          <externalMetadataColumns />
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]"
+                          exclusionGroup="1"
+                          name="Data Conversion Output"
+                          synchronousInputId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de TimeTy]"
+                              dataType="numeric"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de TimeTy]"
+                              name="Cópia de TimeTy"
+                              precision="18"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Specifies the input column used as the source of data for the conversion."
+                                  name="SourceInputColumnLineageID">#{Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[TimeTy]}</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de TimeTyDesc]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              length="50"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de TimeTyDesc]"
+                              name="Cópia de TimeTyDesc"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Specifies the input column used as the source of data for the conversion."
+                                  name="SourceInputColumnLineageID">#{Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[TimeTyDesc]}</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de TotalHour]"
+                              dataType="numeric"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de TotalHour]"
+                              name="Cópia de TotalHour"
+                              precision="18"
+                              scale="10"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Specifies the input column used as the source of data for the conversion."
+                                  name="SourceInputColumnLineageID">#{Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[TotalHour]}</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Key]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              length="500"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Key]"
+                              name="Cópia de Key"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Specifies the input column used as the source of data for the conversion."
+                                  name="SourceInputColumnLineageID">#{Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Key]}</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Parametros_WS]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              length="500"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Parametros_WS]"
+                              name="Cópia de Parametros_WS"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Specifies the input column used as the source of data for the conversion."
+                                  name="SourceInputColumnLineageID">#{Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Parametros_WS]}</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                              </properties>
+                            </outputColumn>
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                        <output
+                          refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output]"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="Data Conversion Error Output"
+                          synchronousInputId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column"
+                      componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                      contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                      description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                      name="Derived Column"
+                      usesDispositions="true">
+                      <inputs>
+                        <input
+                          refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                          description="Input to the Derived Column Transformation"
+                          name="Derived Column Input">
+                          <externalMetadataColumns />
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                          description="Default Output of the Derived Column Transformation"
+                          exclusionGroup="1"
+                          name="Derived Column Output"
+                          synchronousInputId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Key]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              length="500"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Key]"
+                              name="Key"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">@[User::P_PARAMETRO_KEY]</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">@[User::P_PARAMETRO_KEY]</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Parametros_WS]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              length="500"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Parametros_WS]"
+                              name="Parametros_WS"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">@[User::P_PARAMETRO2]</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">@[User::P_PARAMETRO2]</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[DailyExec]"
+                              dataType="i4"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[DailyExec]"
+                              name="DailyExec"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">@[User::P_PARAMETRO_DAILY_EXEC]</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">@[User::P_PARAMETRO_DAILY_EXEC]</property>
+                              </properties>
+                            </outputColumn>
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                        <output
+                          refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                          description="Error Output of the Derived Column Transformation"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="Derived Column Error Output"
+                          synchronousInputId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination"
+                      componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                      contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                      description="OLE DB Destination"
+                      name="OLE DB Destination"
+                      usesDispositions="true"
+                      version="4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                          name="CommandTimeout">0</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the name of the database object used to open a rowset."
+                          name="OpenRowset">[dbo].[SA_EXT_WS_HORAS]</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the variable that contains the name of the database object used to open a rowset."
+                          name="OpenRowsetVariable"></property>
+                        <property
+                          dataType="System.String"
+                          description="The SQL command to be executed."
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column code page to use when code page information is unavailable from the data source."
+                          name="DefaultCodePage">1252</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Forces the use of the DefaultCodePage property value when describing character data."
+                          name="AlwaysUseDefaultCodePage">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the mode used to access the database."
+                          name="AccessMode"
+                          typeConverter="AccessMode">3</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepIdentity">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepNulls">false</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                          name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                          name="FastLoadMaxInsertCommitSize">2147483647</property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                          connectionManagerID="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[SA]"
+                          description="The OLE DB runtime connection used to access the database."
+                          name="OleDbConnection" />
+                      </connections>
+                      <inputs>
+                        <input
+                          refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                          errorOrTruncationOperation="Insert"
+                          errorRowDisposition="FailComponent"
+                          hasSideEffects="true"
+                          name="OLE DB Destination Input">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de TimeTy]"
+                              cachedDataType="numeric"
+                              cachedName="Cópia de TimeTy"
+                              cachedPrecision="18"
+                              externalMetadataColumnId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TimeTy]"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de TimeTy]" />
+                            <inputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de TimeTyDesc]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="Cópia de TimeTyDesc"
+                              externalMetadataColumnId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TimeTyDesc]"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de TimeTyDesc]" />
+                            <inputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de TotalHour]"
+                              cachedDataType="numeric"
+                              cachedName="Cópia de TotalHour"
+                              cachedPrecision="18"
+                              cachedScale="10"
+                              externalMetadataColumnId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalHour]"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de TotalHour]" />
+                            <inputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Parametros_WS]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="500"
+                              cachedName="Cópia de Parametros_WS"
+                              externalMetadataColumnId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametros_WS]"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Parametros_WS]" />
+                            <inputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cópia de Key]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="500"
+                              cachedName="Cópia de Key"
+                              externalMetadataColumnId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Key]"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Cópia de Key]" />
+                          </inputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TimeTy]"
+                              dataType="numeric"
+                              name="TimeTy"
+                              precision="18" />
+                            <externalMetadataColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TimeTyDesc]"
+                              codePage="1252"
+                              dataType="str"
+                              length="250"
+                              name="TimeTyDesc" />
+                            <externalMetadataColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalHour]"
+                              dataType="numeric"
+                              name="TotalHour"
+                              precision="18"
+                              scale="10" />
+                            <externalMetadataColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Parametros_WS]"
+                              codePage="1252"
+                              dataType="str"
+                              length="500"
+                              name="Parametros_WS" />
+                            <externalMetadataColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Key]"
+                              codePage="1252"
+                              dataType="str"
+                              length="500"
+                              name="Key" />
+                          </externalMetadataColumns>
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="OLE DB Destination Error Output"
+                          synchronousInputId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source"
+                      componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                      contactInfo="Extracts data from an XML file. For example, extract catalog data from an XML file that represents catalogs and catalog items. Before using, specify the schema and generate an output for each XML element.;Microsoft Corporation;Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                      description="Extracts data from an XML file. For example, extract catalog data from an XML file that represents catalogs and catalog items. Before using, specify the schema and generate an output for each XML element."
+                      name="XML Source"
+                      usesDispositions="true"
+                      version="2">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="UserComponentTypeName">Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter, Microsoft.SqlServer.XmlSrc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+                        <property
+                          dataType="System.String"
+                          description="The XML data used by the XML source adapter."
+                          expressionType="Notify"
+                          name="XMLData">C:\SSIS\JOBS\B2F\WS_LOAD\WSBI_Horas.xml</property>
+                        <property
+                          dataType="System.String"
+                          description="The variable used by the XML source adapter to specify XML data."
+                          name="XMLDataVariable"></property>
+                        <property
+                          dataType="System.Int32"
+                          description="Defines how the XML source adapter gets XML data."
+                          name="AccessMode">0</property>
+                        <property
+                          dataType="System.String"
+                          description="The XML schema definition used by the XML source adapter."
+                          expressionType="Notify"
+                          name="XMLSchemaDefinition">C:\SSIS\JOBS\B2F\WS_LOAD\WebServiceBIHoras.xds.xsd</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Identifies whether or not to use inline schema."
+                          name="UseInlineSchema">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Defines how XML integer types are mapped."
+                          name="XMLIntegerMapping"
+                          typeConverter="Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter+XMLIntegerMappingConverter, Microsoft.SqlServer.XmlSrc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">0</property>
+                      </properties>
+                      <outputs>
+                        <output
+                          refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item]"
+                          name="item">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Identifies the rowset associated with the output."
+                              name="RowsetID">item</property>
+                          </properties>
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[TimeTy]"
+                              dataType="ui2"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[TimeTy]"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[TimeTy]"
+                              name="TimeTy"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[TimeTyDesc]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[TimeTyDesc]"
+                              length="255"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[TimeTyDesc]"
+                              name="TimeTyDesc"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[TotalHour]"
+                              dataType="decimal"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[TotalHour]"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[TotalHour]"
+                              name="TotalHour"
+                              scale="10"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[EtHrTrab_Id]"
+                              dataType="ui8"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[EtHrTrab_Id]"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].Columns[EtHrTrab_Id]"
+                              name="EtHrTrab_Id"
+                              truncationRowDisposition="FailComponent" />
+                          </outputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[TimeTy]"
+                              dataType="ui2"
+                              name="TimeTy">
+                              <properties>
+                                <property
+                                  dataType="System.String"
+                                  name="CLRType">System.UInt16</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[TimeTyDesc]"
+                              dataType="wstr"
+                              length="255"
+                              name="TimeTyDesc">
+                              <properties>
+                                <property
+                                  dataType="System.String"
+                                  name="CLRType">System.String</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[TotalHour]"
+                              dataType="decimal"
+                              name="TotalHour"
+                              scale="10">
+                              <properties>
+                                <property
+                                  dataType="System.String"
+                                  name="CLRType">System.Decimal</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item].ExternalColumns[EtHrTrab_Id]"
+                              dataType="ui8"
+                              name="EtHrTrab_Id">
+                              <properties>
+                                <property
+                                  dataType="System.String"
+                                  name="CLRType">System.UInt64</property>
+                              </properties>
+                            </externalMetadataColumn>
+                          </externalMetadataColumns>
+                        </output>
+                        <output
+                          refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output]"
+                          isErrorOut="true"
+                          name="item Error Output">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Identifies the rowset associated with the output."
+                              name="RowsetID">item</property>
+                          </properties>
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[TimeTy]"
+                              dataType="nText"
+                              externalMetadataColumnId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[TimeTy]"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[TimeTy]"
+                              name="TimeTy" />
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[TimeTyDesc]"
+                              dataType="nText"
+                              externalMetadataColumnId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[TimeTyDesc]"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[TimeTyDesc]"
+                              name="TimeTyDesc" />
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[TotalHour]"
+                              dataType="nText"
+                              externalMetadataColumnId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[TotalHour]"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[TotalHour]"
+                              name="TotalHour" />
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[EtHrTrab_Id]"
+                              dataType="nText"
+                              externalMetadataColumnId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[EtHrTrab_Id]"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[EtHrTrab_Id]"
+                              name="EtHrTrab_Id" />
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[TimeTy]"
+                              dataType="nText"
+                              name="TimeTy" />
+                            <externalMetadataColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[TimeTyDesc]"
+                              dataType="nText"
+                              name="TimeTyDesc" />
+                            <externalMetadataColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[TotalHour]"
+                              dataType="nText"
+                              name="TotalHour" />
+                            <externalMetadataColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item Error Output].ExternalColumns[EtHrTrab_Id]"
+                              dataType="nText"
+                              name="EtHrTrab_Id" />
+                          </externalMetadataColumns>
+                        </output>
+                        <output
+                          refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtHrTrab]"
+                          name="EtHrTrab">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Identifies the rowset associated with the output."
+                              name="RowsetID">EtHrTrab</property>
+                          </properties>
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtHrTrab].Columns[EtHrTrab_Id]"
+                              dataType="ui8"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtHrTrab].ExternalColumns[EtHrTrab_Id]"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtHrTrab].Columns[EtHrTrab_Id]"
+                              name="EtHrTrab_Id"
+                              truncationRowDisposition="FailComponent" />
+                          </outputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtHrTrab].ExternalColumns[EtHrTrab_Id]"
+                              dataType="ui8"
+                              name="EtHrTrab_Id">
+                              <properties>
+                                <property
+                                  dataType="System.String"
+                                  name="CLRType">System.UInt64</property>
+                              </properties>
+                            </externalMetadataColumn>
+                          </externalMetadataColumns>
+                        </output>
+                        <output
+                          refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtHrTrab Error Output]"
+                          isErrorOut="true"
+                          name="EtHrTrab Error Output">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Identifies the rowset associated with the output."
+                              name="RowsetID">EtHrTrab</property>
+                          </properties>
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtHrTrab Error Output].Columns[EtHrTrab_Id]"
+                              dataType="nText"
+                              externalMetadataColumnId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtHrTrab Error Output].ExternalColumns[EtHrTrab_Id]"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtHrTrab Error Output].Columns[EtHrTrab_Id]"
+                              name="EtHrTrab_Id" />
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtHrTrab Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtHrTrab Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtHrTrab Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtHrTrab Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[EtHrTrab Error Output].ExternalColumns[EtHrTrab_Id]"
+                              dataType="nText"
+                              name="EtHrTrab_Id" />
+                          </externalMetadataColumns>
+                        </output>
+                      </outputs>
+                    </component>
+                  </components>
+                  <paths>
+                    <path
+                      refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task.Paths[Data Conversion Output]"
+                      endId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      name="Data Conversion Output"
+                      startId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]" />
+                    <path
+                      refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task.Paths[Derived Column Output]"
+                      endId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Derived Column Output"
+                      startId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task.Paths[item]"
+                      endId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                      name="item"
+                      startId="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source.Outputs[item]" />
+                  </paths>
+                </pipeline>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Loop de parâmetros\Contêiner da Sequência\Web Service Task"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.WebServiceTask.WebServiceTask, Microsoft.SqlServer.WebServiceTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Web Service Task"
+              DTS:DTSID="{5A7455E5-5DE7-4F36-A0A8-8D081733BE96}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.WebServiceTask.WebServiceTask, Microsoft.SqlServer.WebServiceTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Web Service Task"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <WSTask:WebServiceTaskData
+                  WSTask:ConnectionName="{B493B514-B2B5-4510-92F7-46205CBBA1FA}"
+                  WSTask:Service="ServiceRTE"
+                  WSTask:WSDLFile="C:\SSIS\JOBS\B2F\WS_LOAD\WebServiceBI.wsdl"
+                  WSTask:OutputLocation="WSBI_Horas.xml" xmlns:WSTask="www.microsoft.com/sqlserver/dts/tasks/webservicetask">
+                  <WSTask:MethodInfo
+                    WSTask:MethodName="GetData"
+                    WSTask:MessageName="">
+                    <WSTask:Documentation></WSTask:Documentation>
+                    <WSTask:ParamInfo
+                      WSTask:Name="ServiceName"
+                      WSTask:Datatype="string"
+                      WSTask:ParamType="Variable"
+                      WSTask:SeqNumber="0">
+                      <WSTask:VariableValue>User::P_PARAMETRO1</WSTask:VariableValue>
+                    </WSTask:ParamInfo>
+                    <WSTask:ParamInfo
+                      WSTask:Name="ServiceParameters"
+                      WSTask:Datatype="string"
+                      WSTask:ParamType="Variable"
+                      WSTask:SeqNumber="1">
+                      <WSTask:VariableValue>User::P_PARAMETRO2</WSTask:VariableValue>
+                    </WSTask:ParamInfo>
+                  </WSTask:MethodInfo>
+                </WSTask:WebServiceTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Loop de parâmetros\Contêiner da Sequência.PrecedenceConstraints[Restrição]"
+              DTS:CreationName=""
+              DTS:DTSID="{DE26D623-2266-4DF5-9FA7-0415A4F90067}"
+              DTS:From="Package\Loop de parâmetros\Contêiner da Sequência\Web Service Task"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Restrição"
+              DTS:To="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Loop de parâmetros.PrecedenceConstraints[Restrição]"
+          DTS:CreationName=""
+          DTS:Description="Sucesso"
+          DTS:DTSID="{3F9142D1-C1AE-4897-BF1F-9BE5B476CA40}"
+          DTS:From="Package\Loop de parâmetros\Contêiner da Sequência"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição"
+          DTS:To="Package\Loop de parâmetros\Atualiza Sucesso" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Loop de parâmetros.PrecedenceConstraints[Restrição 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{7DF2A2A6-6B25-43D4-A750-3E3FF6516BD3}"
+          DTS:From="Package\Loop de parâmetros\Contêiner da Sequência"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 1"
+          DTS:To="Package\Loop de parâmetros\Atualiza Erro"
+          DTS:Value="1" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Loop de parâmetros.PrecedenceConstraints[Restrição 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{BA074F99-64DE-408F-A726-7C61877F2DB2}"
+          DTS:From="Package\Loop de parâmetros\Atualiza Inicio"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 2"
+          DTS:To="Package\Loop de parâmetros\Contêiner da Sequência" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{4903962D-9285-4F7A-9C81-3F4B23B2B4C8}"
+          DTS:ObjectName="{4903962D-9285-4F7A-9C81-3F4B23B2B4C8}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::P_PARAMETRO1" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{A11B7724-354B-4D76-A942-76C0A09D6FCB}"
+          DTS:ObjectName="{A11B7724-354B-4D76-A942-76C0A09D6FCB}"
+          DTS:ValueIndex="1"
+          DTS:VariableName="User::P_PARAMETRO2" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{A5425765-79A7-445D-BCE4-081C42383C1A}"
+          DTS:ObjectName="{A5425765-79A7-445D-BCE4-081C42383C1A}"
+          DTS:ValueIndex="3"
+          DTS:VariableName="User::P_PARAMETRO_DAILY_EXEC" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{20AF6FBB-0937-4EEC-8135-6E773EA6C18B}"
+          DTS:ObjectName="{20AF6FBB-0937-4EEC-8135-6E773EA6C18B}"
+          DTS:ValueIndex="2"
+          DTS:VariableName="User::P_PARAMETRO_KEY" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição]"
+      DTS:CreationName=""
+      DTS:DTSID="{25D3772D-3E5B-4035-B3DF-6995E8C3596E}"
+      DTS:From="Package\Elimina tabela Horas"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição"
+      DTS:To="Package\Get Param" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{A6026349-892E-47CF-B780-7CA9246999C7}"
+      DTS:From="Package\Get Param"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 1"
+      DTS:To="Package\Loop de parâmetros" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\Elimina tabela Horas"
+          TopLeft="115.1,5.49999999999995" />
+        <NodeLayout
+          Size="128,41.6"
+          Id="Package\Get Param"
+          TopLeft="132.7,107.1" />
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\Loop de parâmetros\Atualiza Erro"
+          TopLeft="221.7,414.3" />
+        <NodeLayout
+          Size="144,41.6"
+          Id="Package\Loop de parâmetros\Atualiza Inicio"
+          TopLeft="98.4999979564121,7.94705885784839" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Loop de parâmetros\Atualiza Sucesso"
+          TopLeft="5.50000000000006,414.3" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task"
+          TopLeft="11.1,107.1" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Loop de parâmetros\Contêiner da Sequência\Web Service Task"
+          TopLeft="5.50000000000001,5.49999999999995" />
+        <EdgeLayout
+          Id="Package\Loop de parâmetros\Contêiner da Sequência.PrecedenceConstraints[Restrição]"
+          TopLeft="86.3,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="172.8,204"
+          Size="172.8,247.2"
+          Id="Package\Loop de parâmetros\Contêiner da Sequência"
+          TopLeft="84.0999979564121,109.547058857848" />
+        <EdgeLayout
+          Id="Package\Loop de parâmetros.PrecedenceConstraints[Restrição]"
+          TopLeft="143.033331289745,356.747058857848">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-59.5333312897454,57.5529411421516"
+              Start="0,0"
+              End="-59.5333312897454,50.0529411421516">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.3379816374596" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.3379816374596"
+                    Point2="0,23.3379816374596"
+                    Point3="-4,23.3379816374596" />
+                  <mssgle:LineSegment
+                    End="-55.5333312897454,23.3379816374596" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-55.5333312897454,23.3379816374596"
+                    Point2="-59.5333312897454,23.3379816374596"
+                    Point3="-59.5333312897454,27.3379816374596" />
+                  <mssgle:LineSegment
+                    End="-59.5333312897454,50.0529411421516" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop de parâmetros.PrecedenceConstraints[Restrição 1]"
+          TopLeft="197.966664623079,356.747058857848">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="92.5333353769212,57.5529411421516"
+              Start="0,0"
+              End="92.5333353769212,50.0529411421516">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.3379816374596" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.3379816374596"
+                    Point2="0,23.3379816374596"
+                    Point3="4,23.3379816374596" />
+                  <mssgle:LineSegment
+                    End="88.5333353769212,23.3379816374596" />
+                  <mssgle:CubicBezierSegment
+                    Point1="88.5333353769212,23.3379816374596"
+                    Point2="92.5333353769212,23.3379816374596"
+                    Point3="92.5333353769212,27.3379816374596" />
+                  <mssgle:LineSegment
+                    End="92.5333353769212,50.0529411421516" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="31.0253200322106,28.3379816374596,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop de parâmetros.PrecedenceConstraints[Restrição 2]"
+          TopLeft="170.499997956412,49.5470588578485">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="382.4,511.2"
+          Size="382.4,554.4"
+          Id="Package\Loop de parâmetros"
+          TopLeft="5.50000000000009,208.7" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="196.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 1]"
+          TopLeft="196.7,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="133.6,41.6"
+          Id="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\XML Source"
+          TopLeft="24.3,5.49999999999995" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Data Conversion"
+          TopLeft="13.1,208.7" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination"
+          TopLeft="5.50000000000003,310.3" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\Derived Column"
+          TopLeft="14.7,107.1" />
+        <EdgeLayout
+          Id="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task.Paths[item]"
+          TopLeft="91.1,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-10.02166015625,21.52685546875,20.0433203125,9.4462890625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="91.1,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="91.1,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Loop de parâmetros\Contêiner da Sequência\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

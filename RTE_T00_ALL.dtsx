@@ -1,22 +1,22 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="6/15/2018 11:33:44 AM"
-  DTS:CreationName="Microsoft.Package"
+  DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="SRVBI"
   DTS:CreatorName="JAPMARCO\B2F"
   DTS:DelayValidation="True"
   DTS:DTSID="{C7894EF0-A241-4D5C-BEB0-DF3A2E7185EF}"
-  DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="14.0.3002.68"
   DTS:LocaleID="2070"
   DTS:ObjectName="RTE_T00_ALL"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{756D9A7A-AF07-4566-92E3-9F16CC32D489}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{3515E911-0828-4DCF-97D2-6E7DBC8ED47A}">
   <DTS:Property
-    DTS:Name="PackageFormatVersion">8</DTS:Property>
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -47,7 +47,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="PACKAGE">
       <DTS:VariableValue
-        DTS:DataType="8">RTE_T01_FACT_OBJ_CUMP</DTS:VariableValue>
+        DTS:DataType="8">RTE_T01_ARVORE_DEFEITOS</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -88,7 +88,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Foreach Loop Container">
       <DTS:ForEachEnumerator
-        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:CreationName="Microsoft.SqlServer.Dts.Runtime.Enumerators.ADO.ForEachADOEnumerator, Microsoft.SqlServer.ForEachADOEnumerator, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
         DTS:DTSID="{9CBE4666-6AAA-463F-9A53-649B3F9A853C}"
         DTS:ObjectName="{6B764ED3-2EDC-4076-93D6-DB056C66FE1D}">
         <DTS:ObjectData>
@@ -101,10 +101,10 @@
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Foreach Loop Container\EXECUTE PACKAGE"
-          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:CreationName="SSIS.ExecutePackageTask.3"
           DTS:Description="Execute Package Task"
           DTS:DTSID="{9D466F95-0DA8-4AE2-B8F1-76AEE5E85BA4}"
-          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:ExecutableType="SSIS.ExecutePackageTask.3"
           DTS:LocaleID="-1"
           DTS:ObjectName="EXECUTE PACKAGE"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -114,7 +114,7 @@
           <DTS:ObjectData>
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
-              <PackageName>RTE_T01_FACT_OBJ_CUMP.dtsx</PackageName>
+              <PackageName>RTE_T01_ARVORE_DEFEITOS.dtsx</PackageName>
               <ParameterAssignment>
                 <ParameterName>ETL_EXECUTION_NUMBER</ParameterName>
                 <BindedVariableOrParameterName>$Package::ETL_EXECUTION_NUMBER</BindedVariableOrParameterName>
@@ -124,10 +124,10 @@
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Foreach Loop Container\GET DATE"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{973F2C75-6984-4794-9E4D-BB744FEAA8AD}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="GET DATE"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
@@ -146,10 +146,10 @@
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Foreach Loop Container\LOG SUCCESS"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{AEE0E568-6B7A-41E1-9813-5BC6FDE7B089}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="LOG SUCCESS"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
@@ -210,10 +210,10 @@
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\GET ETL START DATE"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{7B646C9E-7BC3-4D60-8A14-DC74F992FB65}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="GET ETL START DATE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
@@ -232,10 +232,10 @@
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\GET PACKAGE LIST"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{09B6FD37-96D1-4A35-8B47-A8D066E7A12D}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="GET PACKAGE LIST"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
@@ -300,10 +300,10 @@
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\LOG ERROR"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{9C72CCB2-C3F9-4520-8FBD-EEDD31C71895}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="LOG ERROR"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -359,7 +359,7 @@
 <!--If you manually edit this section and make a mistake, you can delete it. -->
 <!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
-  Version="sql12">
+  Version="sql11">
   <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">

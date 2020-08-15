@@ -1,26 +1,26 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="6/15/2018 1:42:52 PM"
-  DTS:CreationName="Microsoft.Package"
+  DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="SRVBI"
   DTS:CreatorName="JAPMARCO\B2F"
-  DTS:DTSID="{3BB74E60-075A-4223-8A47-D26AD60E6EEA}"
-  DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.1300.371"
+  DTS:DTSID="{CD512A67-8017-4D78-92DA-E246F1072961}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="15.0.2000.68"
   DTS:LocaleID="2070"
-  DTS:ObjectName="2_T_DUMMY_PACKAGE"
+  DTS:ObjectName="RTE_T60_FACT_ROTEIROS"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{50A536E3-8B88-4B98-A0B8-EF672E9B6856}">
+  DTS:VersionBuild="65"
+  DTS:VersionGUID="{0E361A2F-694A-4842-A7B3-ACA0E380420F}">
   <DTS:Property
-    DTS:Name="PackageFormatVersion">8</DTS:Property>
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="20"
-      DTS:DTSID="{60924040-0950-4924-BE8D-1C04399C885E}"
+      DTS:DTSID="{DBBBB770-5E7A-4732-B08E-F2251DDCCB4B}"
       DTS:ObjectName="ETL_EXECUTION_NUMBER">
       <DTS:Property
         DTS:DataType="20"
@@ -30,7 +30,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5330BAD8-CB4D-43C5-AB29-2214BABCD75E}"
+      DTS:DTSID="{4133C36E-622A-48AB-86B2-8D591E89E72A}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="TASK_START_TIME">
@@ -41,106 +41,53 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\DUMMY_TASK"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{0091DA49-0390-473F-AAA5-B074FCD25A0E}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:refId="Package\Elimina tabela de Roteiros"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Elimina tabela de Roteiros"
+      DTS:DTSID="{580D77D7-0DEC-4FEA-B0EB-7A2A02FC098A}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
-      DTS:ObjectName="DUMMY_TASK"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ObjectName="Elimina tabela de Roteiros"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F26CBBA0-DC76-4E15-B722-AAD56C906FC5}"
-          SQLTask:SqlStatementSource="SELECT 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE SA_FACT_ROTEIROS" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\DUMMY_TASK 1"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{32E269CA-27F4-4D81-BB51-6578E06CB22A}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:refId="Package\Load Data"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Load Data"
+      DTS:DTSID="{B687BA68-0F33-4932-8E4A-B6BF656CCC31}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
-      DTS:ObjectName="DUMMY_TASK 1"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ObjectName="Load Data"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F26CBBA0-DC76-4E15-B722-AAD56C906FC5}"
-          SQLTask:SqlStatementSource="waitfor delay '00:00:02' SELECT 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\DUMMY_TASK 2"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{1F0B605D-C535-41E1-A6F3-3AEE64FE3D0B}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="DUMMY_TASK 2"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{F26CBBA0-DC76-4E15-B722-AAD56C906FC5}"
-          SQLTask:SqlStatementSource="waitfor delay '00:00:05' SELECT 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\DUMMY_TASK COM ERRO"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{616AAE85-3A9D-40D6-BB59-2012EDF9609B}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="DUMMY_TASK COM ERRO"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{F26CBBA0-DC76-4E15-B722-AAD56C906FC5}"
-          SQLTask:SqlStatementSource="SEL ECT 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{8AB6A9D0-0306-4011-AF72-515F12A0A2F3}"
+          SQLTask:SqlStatementSource="INSERT INTO [dbo].[SA_FACT_ROTEIROS]&#xA;           ([MATERIAL_COD]&#xA;           ,[UNI_COD]&#xA;           ,[MATERIAL_DES]&#xA;           ,[DATA_INICIO]&#xA;           ,[OPERACAO_COD]&#xA;           ,[LINHA_COD]&#xA;           ,[CADENCIA]&#xA;           ,[HH]&#xA;           ,[UNI_HH]&#xA;           ,[HM]&#xA;           ,[UNI_HM]&#xA;           ,[SETOR_COD])&#xA;SELECT &#xA;&#x9;  cast([Matnr] as varchar(30)) MATERIAL_COD,&#xA;&#x9; [Meins] UNI_COD&#xA;      ,[Maktx] MATERIAL_DES&#xA;      , CONVERT(VARCHAR(10), [Aedat], 112) DATA_INICIO&#xA;      ,[Vornr] OPERACAO_COD&#xA;      ,right([Verid] ,1) LINHA_COD&#xA;      ,[Bmsch] CADENCIA&#xA;      ,[Vgw01] HH&#xA;      ,[Vge01] UNI_HH&#xA;      ,[Vgw02] HM&#xA;      ,[Vge02] UNI_HM&#xA;&#x9; ,1 SETOR_COD&#xA;  FROM [RTE_BI_SA].[dbo].[SA_EXT_WS_ROTEIROS]&#xA;  where verid in ('LB1', 'LB2', 'LB3', 'LB4', 'LB5', 'LB6')&#xA; " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:refId="Package.PrecedenceConstraints[Restrição]"
       DTS:CreationName=""
-      DTS:DTSID="{71DFB4AC-43EB-4DC2-9F26-62B2885C8FAC}"
-      DTS:From="Package\DUMMY_TASK"
+      DTS:DTSID="{406DD11E-9C13-4E8A-B74E-4E1091E1C647}"
+      DTS:From="Package\Elimina tabela de Roteiros"
       DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint"
-      DTS:To="Package\DUMMY_TASK 1" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{DC902510-9881-401C-969C-6846E0748F3B}"
-      DTS:From="Package\DUMMY_TASK 1"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1"
-      DTS:To="Package\DUMMY_TASK 2" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
-      DTS:CreationName=""
-      DTS:DTSID="{43596903-333E-461A-96FC-38914C7DD89E}"
-      DTS:From="Package\DUMMY_TASK 2"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 2"
-      DTS:To="Package\DUMMY_TASK COM ERRO" />
+      DTS:ObjectName="Restrição"
+      DTS:To="Package\Load Data" />
   </DTS:PrecedenceConstraints>
   <DTS:EventHandlers>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{62E7212F-E669-4705-B6E9-365D0B2F451D}"
+      DTS:DTSID="{3D446A0B-2051-476E-9B7E-820155983C45}"
       DTS:EventID="-986637"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
@@ -148,7 +95,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{FAFD4CF6-2933-43FF-9433-12C8E5DB4E8B}"
+          DTS:DTSID="{A3E902FF-5978-4DD0-BCAE-6BD1DE39C3CB}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -159,17 +106,17 @@
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\LOG ERROR"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{D16BEC3A-5EBB-4271-926C-9723BC2B27B2}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{F9372590-6924-42FC-92C1-6C172D759419}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="LOG ERROR"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{F26CBBA0-DC76-4E15-B722-AAD56C906FC5}"
+              SQLTask:Connection="{98525CFE-E826-4424-9DC2-8FE809DDBED0}"
               SQLTask:SqlStatementSource="DECLARE @EXEC_NUM BIGINT&#xA;SET @EXEC_NUM =?&#xA;DECLARE @PACKAGE_NAME VARCHAR(100)&#xA;SET @PACKAGE_NAME =?&#xA;DECLARE @TASK_NAME VARCHAR(100)&#xA;SET @TASK_NAME =?&#xA;DECLARE @ERROR_CODE VARCHAR(1000)&#xA;SET @ERROR_CODE=?&#xA;DECLARE @ERROR_DESC VARCHAR(3000)&#xA;SET @ERROR_DESC=?&#xA;DECLARE @START_TIME datetime&#xA;SET @START_TIME=convert(datetime, ?)&#xA;&#xA;INSERT INTO [dbo].[ETL_LOG]&#xA;       (ETL_EXECUTION_NUMBER, PACKAGE_NAME, TASK_NAME, TASK_TIMESTAMP, TASK_DURATION_SEC, TASK_STATUS, comments)&#xA;       VALUES&#xA;   &#xA;       (@EXEC_NUM&#xA;           ,@PACKAGE_NAME&#xA;           ,@TASK_NAME&#xA;           , getdate()&#xA;           ,DATEDIFF(SS, @START_TIME   ,GETDATE() )&#xA;           ,'ERROR'&#xA;   ,case when len (@ERROR_CODE)&lt;0 then 'ERR CD. = '+@ERROR_CODE+' || ' else '' end+@ERROR_DESC&#xA;           )&#xA;  " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
@@ -215,7 +162,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnPostExecute]"
       DTS:CreationName="OnPostExecute"
-      DTS:DTSID="{124023F1-A939-4F0F-B049-3A226100C5AE}"
+      DTS:DTSID="{4B6D4EED-9516-47EC-8C82-4F183B6D491F}"
       DTS:EventID="1644194048"
       DTS:EventName="OnPostExecute"
       DTS:LocaleID="-1">
@@ -223,7 +170,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{B4A0D18F-55FF-46C8-97ED-5ACC5242FAF7}"
+          DTS:DTSID="{D5E39FF2-7085-498B-A868-3F8CF5A321E3}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -234,17 +181,17 @@
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPostExecute]\LOG SUCCESS"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{10009747-7023-4A5E-A575-7B671081326F}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{89FBD767-FCB5-4404-8282-788A43D82A56}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="LOG SUCCESS"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{F26CBBA0-DC76-4E15-B722-AAD56C906FC5}"
+              SQLTask:Connection="{98525CFE-E826-4424-9DC2-8FE809DDBED0}"
               SQLTask:SqlStatementSource="DECLARE @EXEC_NUM BIGINT&#xA;SET @EXEC_NUM =?&#xA;DECLARE @PACKAGE_NAME VARCHAR(100)&#xA;SET @PACKAGE_NAME =?&#xA;DECLARE @TASK_NAME VARCHAR(100)&#xA;SET @TASK_NAME =?&#xA;DECLARE @START_TIME datetime&#xA;SET @START_TIME=convert(datetime, ?,121)&#xA;&#xA;IF @TASK_NAME &lt;&gt;@PACKAGE_NAME &#xA;&#xA;INSERT INTO [dbo].[ETL_LOG]&#xA;       (ETL_EXECUTION_NUMBER, PACKAGE_NAME, TASK_NAME, TASK_TIMESTAMP, TASK_DURATION_SEC, TASK_STATUS)&#xA;       VALUES&#xA;   &#xA;       (@EXEC_NUM&#xA;           ,@PACKAGE_NAME&#xA;           ,@TASK_NAME&#xA;           , getdate()&#xA;           ,DATEDIFF(SS, @START_TIME   ,GETDATE() )&#xA;           ,'SUCCESS'&#xA;           )&#xA;;  " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
@@ -278,7 +225,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnPreExecute]"
       DTS:CreationName="OnPreExecute"
-      DTS:DTSID="{8E489F9C-1AF6-44A3-8191-396769EEB387}"
+      DTS:DTSID="{6AF80CAF-4569-4407-A4F0-B5BCA948EA56}"
       DTS:EventID="1644194048"
       DTS:EventName="OnPreExecute"
       DTS:LocaleID="-1">
@@ -286,7 +233,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{4661186B-CDBA-48BF-AB3F-BD8FBF9F9866}"
+          DTS:DTSID="{8C86CDBD-B885-43B6-ACB4-07DC38A9D60F}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -297,17 +244,17 @@
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPreExecute]\GET ETL START DATE"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{1F2111FD-D204-4E12-96FD-2B2597293BB5}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{6217AFE0-0283-428B-BDBA-418351F652BB}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="GET ETL START DATE"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{F26CBBA0-DC76-4E15-B722-AAD56C906FC5}"
+              SQLTask:Connection="{98525CFE-E826-4424-9DC2-8FE809DDBED0}"
               SQLTask:SqlStatementSource="SELECT convert(varchar(50), GETDATE(),121) AS STARTTIME"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
@@ -324,99 +271,35 @@
 <!--If you manually edit this section and make a mistake, you can delete it. -->
 <!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
-  Version="sql12">
+  Version="sql11">
   <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="145.6,41.6"
-          Id="Package\DUMMY_TASK"
-          TopLeft="72,71" />
+          Size="200.8,41.6"
+          Id="Package\Elimina tabela de Roteiros"
+          TopLeft="5.50000000000001,5.50000000000007" />
         <NodeLayout
-          Size="145.6,41.6"
-          Id="Package\DUMMY_TASK 1"
-          TopLeft="72,173" />
-        <NodeLayout
-          Size="145.6,41.6"
-          Id="Package\DUMMY_TASK 2"
-          TopLeft="72,275" />
-        <NodeLayout
-          Size="201.6,41.6"
-          Id="Package\DUMMY_TASK COM ERRO"
-          TopLeft="72,377" />
+          Size="126.4,41.6"
+          Id="Package\Load Data"
+          TopLeft="45.1,107.1" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="145,113">
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="107.1,47.1000000000001">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="0,52.5">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="145,215">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="145,317">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="28,60"
-              Start="0,0"
-              End="28,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="4,30" />
-                  <mssgle:LineSegment
-                    End="24,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="24,30"
-                    Point2="28,30"
-                    Point3="28,34" />
-                  <mssgle:LineSegment
-                    End="28,52.5" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -434,7 +317,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="136,42"
+          Size="136,41.6"
           Id="Package.EventHandlers[OnError]\LOG ERROR"
           TopLeft="60,60" />
       </GraphLayout>
@@ -446,7 +329,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="146,42"
+          Size="145.6,41.6"
           Id="Package.EventHandlers[OnPostExecute]\LOG SUCCESS"
           TopLeft="60,60" />
       </GraphLayout>
@@ -458,7 +341,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="183,42"
+          Size="183.2,41.6"
           Id="Package.EventHandlers[OnPreExecute]\GET ETL START DATE"
           TopLeft="47,25" />
       </GraphLayout>
